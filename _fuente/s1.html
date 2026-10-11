@@ -1,0 +1,705 @@
+<!--TITLE:Sesión 1 · Fundamentos, equivalencia y tasas-->
+<div class="slide active">
+  <div class="slide-content text-center">
+    <div class="badge mb-6">Sesión 1 de 4</div>
+    <h1 class="text-[5.5rem] leading-none font-black tracking-widest mb-3 neon-glow">FUNDAMENTOS</h1>
+    <h3 class="text-xl font-light text-[#777] tracking-[.25em] mb-10 uppercase">Equivalencia y tasas de interés</h3>
+    <div class="w-16 h-1 bg-[#2dd4bf] mx-auto mb-10"></div>
+    <p class="text-lg font-semibold text-white mb-1">Ingeniería Económica</p>
+    <p class="text-xs font-medium text-[#666] uppercase tracking-[.2em] leading-relaxed">
+      Temas 1 – 4 &nbsp;·&nbsp; 4 horas<br>Introducción · Importancia · Valor del dinero · Capitalización
+    </p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-1">Mapa del curso</h2>
+    <p class="text-sm text-[#777] mb-7">Cuatro sesiones de cuatro horas · 13 temas · 26 ejercicios</p>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="card border-[#2dd4bf]/40">
+        <div class="lbl accent-t mb-2">Sesión 1 · hoy</div>
+        <p class="text-sm text-white font-semibold mb-2">Fundamentos</p>
+        <p class="text-xs text-[#888] leading-relaxed">¿Cómo muevo dinero en el tiempo sin equivocarme?</p>
+      </div>
+      <div class="card"><div class="lbl mb-2">Sesión 2</div>
+        <p class="text-sm text-white font-semibold mb-2">VP · CC · VA</p>
+        <p class="text-xs text-[#888] leading-relaxed">¿Cuál alternativa cuesta menos?</p></div>
+      <div class="card"><div class="lbl mb-2">Sesión 3</div>
+        <p class="text-sm text-white font-semibold mb-2">TIR · Depreciación · B/C</p>
+        <p class="text-xs text-[#888] leading-relaxed">¿Cuánto rinde y cómo lo grava el fisco?</p></div>
+      <div class="card"><div class="lbl mb-2">Sesión 4</div>
+        <p class="text-sm text-white font-semibold mb-2">Reemplazo · Costos</p>
+        <p class="text-xs text-[#888] leading-relaxed">¿Cuándo cambio el activo y cuánto costará lo que no existe?</p></div>
+    </div>
+    <div class="card mt-6 border-[#a78bfa]/30">
+      <div class="lbl accent-v mb-2">Regla de oro del curso</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Todo resultado se obtiene <span class="text-white font-semibold">tres veces</span>: con tablas de factores, con fórmula cerrada y con Excel o Python. Si los tres no coinciden, el error es conceptual, no aritmético.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">¿Qué es la ingeniería económica?</h2>
+    <div class="card border-[#2dd4bf]/40 mb-6">
+      <p class="text-base text-[#ddd] leading-relaxed">Conjunto de técnicas para <span class="text-white font-semibold">comparar alternativas técnicas cuyas consecuencias monetarias ocurren en instantes distintos</span>, bajo un criterio explícito de rentabilidad mínima.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4 mb-7">
+      <div class="card"><div class="lbl accent-r mb-2">No es contabilidad</div>
+        <p class="text-xs text-[#999] leading-relaxed">La contabilidad <em>registra</em> el pasado. Esto <em>proyecta</em> flujos futuros diferenciales.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">No es finanzas corporativas</div>
+        <p class="text-xs text-[#999] leading-relaxed">El objeto es el <span class="text-white">activo físico o el proyecto</span>, no la estructura de capital.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Trabaja con efectivo</div>
+        <p class="text-xs text-[#999] leading-relaxed">Nunca con utilidades contables. La depreciación entra solo por su efecto fiscal.</p></div>
+    </div>
+    <h3 class="text-sm font-bold text-white uppercase tracking-[.15em] mb-4">Los siete pasos del estudio</h3>
+    <div class="grid md:grid-cols-7 gap-2 mb-5">
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">1</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Definir problema</p></div>
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">2</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Generar alternativas</p></div>
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">3</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Estimar flujos</p></div>
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">4</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Fijar horizonte y TREMA</p></div>
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">5</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Aplicar criterio</p></div>
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">6</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Sensibilidad</p></div>
+      <div class="card !p-3 text-center"><div class="font-mono accent-t text-lg">7</div><p class="text-[10px] text-[#888] mt-1 leading-tight">Decidir y auditar</p></div>
+    </div>
+    <div class="card border-[#fb7185]/40">
+      <div class="lbl accent-r mb-2">Dónde fallan los estudios reales</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Casi nunca en el paso 5, la aritmética. Fallan en el <span class="text-white font-semibold">paso 3</span> (estimaciones sesgadas) y en el <span class="text-white font-semibold">paso 2</span> (alternativas mal planteadas o no excluyentes).</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-1">Dónde se decide el costo</h2>
+    <p class="text-sm text-[#777] mb-5">El costo comprometido corre muy por delante del costo erogado</p>
+    <div class="grid md:grid-cols-5 gap-6 items-center">
+      <div class="md:col-span-3"><div id="p-commit" style="height:340px"></div></div>
+      <div class="md:col-span-2 space-y-4">
+        <div class="card"><p class="text-sm text-[#ccc] leading-relaxed">En diseño conceptual se ha gastado poco, pero ya se <span class="accent-t font-semibold">comprometió</span> la mayor parte del costo del ciclo de vida.</p></div>
+        <div class="card"><p class="text-sm text-[#ccc] leading-relaxed">El análisis económico tiene valor <span class="text-white font-semibold">antes</span> de que exista el proyecto. Después, solo documenta.</p></div>
+        <div class="card border-[#fb7185]/40"><div class="lbl accent-r mb-2">Corolario incómodo</div>
+          <p class="text-xs text-[#999] leading-relaxed">La estimación en etapa temprana (clase AACE 5, <span class="font-mono">−30% a +50%</span>) es intrínsecamente imprecisa, y aun así es la que más decide. Se retoma en la Sesión 4.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">Costo de oportunidad y TREMA</h2>
+    <div class="card border-[#2dd4bf]/40 mb-6">
+      <div class="lbl accent-t mb-2">TREMA · MARR</div>
+      <p class="text-base text-[#ddd] leading-relaxed">Tasa de Rendimiento Mínima Aceptable: el <span class="text-white font-semibold">rendimiento de la mejor oportunidad rechazada</span> por destinar capital a este proyecto.</p>
+    </div>
+    <div class="text-center text-lg my-8">$$\text{TREMA} \;\ge\; \underbrace{\text{costo de capital}}_{\text{WACC}} \;+\; \underbrace{\text{prima de riesgo}}_{\text{del proyecto}}$$</div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="card"><div class="lbl accent-r mb-2">Si se fija muy alta</div>
+        <p class="text-xs text-[#999] leading-relaxed">Se rechazan proyectos buenos (error tipo II). Es el error típico de empresas con racionamiento de capital.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Si se fija muy baja</div>
+        <p class="text-xs text-[#999] leading-relaxed">Se aceptan proyectos que destruyen valor.</p></div>
+      <div class="card border-[#a78bfa]/40"><div class="lbl accent-v mb-2">Lo esencial</div>
+        <p class="text-xs text-[#999] leading-relaxed">La TREMA es una <span class="text-white">decisión de política</span>, no un dato del proyecto. Por eso el análisis de sensibilidad respecto a <span class="font-mono">i</span> es obligatorio.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-1">Flujo de efectivo y convención de fin de periodo</h2>
+    <p class="text-sm text-[#777] mb-6">Una sola regla que explica la mayoría de los errores de ± un periodo</p>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <svg viewBox="0 0 440 200" class="w-full">
+          <line x1="30" y1="110" x2="410" y2="110" stroke="#444" stroke-width="1.5"/>
+          <polygon points="410,110 402,106 402,114" fill="#444"/>
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="#777" text-anchor="middle">
+            <line x1="40" y1="105" x2="40" y2="115" stroke="#444"/><text x="40" y="130">0</text>
+            <line x1="110" y1="105" x2="110" y2="115" stroke="#444"/><text x="110" y="130">1</text>
+            <line x1="180" y1="105" x2="180" y2="115" stroke="#444"/><text x="180" y="130">2</text>
+            <line x1="250" y1="105" x2="250" y2="115" stroke="#444"/><text x="250" y="130">3</text>
+            <line x1="320" y1="105" x2="320" y2="115" stroke="#444"/><text x="320" y="130">4</text>
+            <line x1="390" y1="105" x2="390" y2="115" stroke="#444"/><text x="390" y="130">5</text>
+          </g>
+          <line x1="40" y1="110" x2="40" y2="175" stroke="#fb7185" stroke-width="2.5"/>
+          <polygon points="40,180 35,170 45,170" fill="#fb7185"/>
+          <text x="40" y="196" font-family="JetBrains Mono, monospace" font-size="11" fill="#fb7185" text-anchor="middle">P</text>
+          <g stroke="#2dd4bf" stroke-width="2.5">
+            <line x1="110" y1="110" x2="110" y2="55"/><line x1="180" y1="110" x2="180" y2="55"/>
+            <line x1="250" y1="110" x2="250" y2="55"/><line x1="320" y1="110" x2="320" y2="55"/>
+          </g>
+          <g fill="#2dd4bf">
+            <polygon points="110,50 105,60 115,60"/><polygon points="180,50 175,60 185,60"/>
+            <polygon points="250,50 245,60 255,60"/><polygon points="320,50 315,60 325,60"/>
+          </g>
+          <text x="215" y="40" font-family="JetBrains Mono, monospace" font-size="11" fill="#2dd4bf" text-anchor="middle">A</text>
+          <line x1="390" y1="110" x2="390" y2="30" stroke="#a78bfa" stroke-width="2.5"/>
+          <polygon points="390,25 385,35 395,35" fill="#a78bfa"/>
+          <text x="390" y="18" font-family="JetBrains Mono, monospace" font-size="11" fill="#a78bfa" text-anchor="middle">F</text>
+        </svg>
+      </div>
+      <div class="space-y-4">
+        <div class="card"><p class="text-sm text-[#ccc] leading-relaxed"><span class="lbl accent-t block mb-2">Convención</span>Todo flujo dentro de un periodo se concentra al <span class="text-white font-semibold">final</span> del periodo.</p></div>
+        <div class="card"><p class="text-sm text-[#ccc] leading-relaxed"><span class="font-mono accent-r">P</span> ocurre en <span class="font-mono">t = 0</span>, que es el fin del periodo 0 y el inicio del periodo 1.</p></div>
+        <div class="card border-[#fb7185]/40"><p class="text-sm text-[#ccc] leading-relaxed">Una serie <span class="font-mono accent-t">A</span> de <span class="font-mono">n</span> pagos ocurre en <span class="font-mono">t = 1 … n</span>. Su valor presente queda en <span class="font-mono">t = 0</span>: <span class="text-white font-semibold">un periodo antes del primer pago</span>.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[25%] p-6 lab-panel flex flex-col gap-5 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 01</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">INTERÉS</span><br><span class="font-bold text-white text-2xl">SIMPLE vs COMPUESTO</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Mueva los controles y observe cómo se abre la brecha. El interés sobre el interés crece de forma exponencial, no lineal.</p>
+      </div>
+      <div class="space-y-4 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Capital P</span><span id="l1-p-val" class="font-mono accent-t">$850,000</span></div>
+          <input type="range" id="l1-p" min="50000" max="3000000" step="50000" value="850000" oninput="lab1()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa i anual</span><span id="l1-i-val" class="font-mono accent-v">8.0%</span></div>
+          <input type="range" id="l1-i" min="1" max="40" step="0.5" value="8" oninput="lab1()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Periodos n</span><span id="l1-n-val" class="font-mono accent-r">5</span></div>
+          <input type="range" id="l1-n" min="1" max="40" step="1" value="5" oninput="lab1()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">F simple · P(1+in)</div><div id="l1-fs" class="font-mono text-lg text-[#fb7185]">—</div></div>
+        <div><div class="lbl mb-1">F compuesto · P(1+i)ⁿ</div><div id="l1-fc" class="font-mono text-lg text-[#2dd4bf]">—</div></div>
+        <div><div class="lbl mb-1">Brecha · interés sobre interés</div><div id="l1-gap" class="font-mono text-lg text-white">—</div></div>
+        <div><div class="lbl mb-1">Brecha relativa</div><div id="l1-gapp" class="font-mono text-lg accent-v">—</div></div>
+      </div>
+      <div class="border-t border-[#1f1f1f] pt-4">
+        <div class="lbl mb-2">Pregunta guía</div>
+        <p class="text-[10px] text-[#777] leading-relaxed">¿A cuántos años la brecha supera al capital original? Pruebe con i = 8%, luego con i = 20%.</p>
+      </div>
+    </div>
+    <div class="flex-1 h-full p-5"><div id="l1-plot" class="w-full h-full"></div></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">Equivalencia: la idea central</h2>
+    <div class="card border-[#2dd4bf]/40 mb-7">
+      <p class="text-base text-[#ddd] leading-relaxed">Dos flujos de efectivo son <span class="text-white font-semibold">equivalentes a la tasa i</span> si su valor, medido en cualquier instante común, es idéntico.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="card"><div class="font-mono accent-t text-2xl mb-2">01</div>
+        <p class="text-sm text-[#ccc] leading-relaxed">La equivalencia <span class="text-white font-semibold">depende de i</span>. Dos flujos equivalentes al 10% no lo son al 15%. Esto es justo lo que explota el análisis de tasa de rendimiento de la Sesión 3.</p></div>
+      <div class="card"><div class="font-mono accent-v text-2xl mb-2">02</div>
+        <p class="text-sm text-[#ccc] leading-relaxed">El instante de comparación es <span class="text-white font-semibold">irrelevante</span> para el ordenamiento: si VP<sub>A</sub> &gt; VP<sub>B</sub>, entonces VA<sub>A</sub> &gt; VA<sub>B</sub>. Base del Tema 7.</p></div>
+      <div class="card"><div class="font-mono accent-r text-2xl mb-2">03</div>
+        <p class="text-sm text-[#ccc] leading-relaxed">La equivalencia es <span class="text-white font-semibold">transitiva</span>: permite descomponer cualquier flujo en piezas estándar y sumarlas. Principio de superposición.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Los seis factores</h2>
+    <table class="dt mb-6">
+      <thead><tr><th>Nombre</th><th>Notación</th><th>Fórmula</th><th>Convierte</th></tr></thead>
+      <tbody>
+        <tr><td>Cantidad compuesta</td><td>(F/P, i, n)</td><td>\((1+i)^n\)</td><td class="accent-t">P → F</td></tr>
+        <tr><td>Valor presente</td><td>(P/F, i, n)</td><td>\((1+i)^{-n}\)</td><td class="accent-t">F → P</td></tr>
+        <tr><td>Serie compuesta</td><td>(F/A, i, n)</td><td>\(\frac{(1+i)^n-1}{i}\)</td><td class="accent-v">A → F</td></tr>
+        <tr><td>Fondo de amortización</td><td>(A/F, i, n)</td><td>\(\frac{i}{(1+i)^n-1}\)</td><td class="accent-v">F → A</td></tr>
+        <tr><td>Valor presente de serie</td><td>(P/A, i, n)</td><td>\(\frac{(1+i)^n-1}{i(1+i)^n}\)</td><td class="accent-r">A → P</td></tr>
+        <tr><td>Recuperación de capital</td><td>(A/P, i, n)</td><td>\(\frac{i(1+i)^n}{(1+i)^n-1}\)</td><td class="accent-r">P → A</td></tr>
+      </tbody>
+    </table>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="card border-[#2dd4bf]/40"><div class="lbl accent-t mb-3">Relaciones que evitan memorizar</div>
+        <div class="text-sm mb-2">$$(A/P,i,n) = (A/F,i,n) + i$$</div>
+        <div class="text-sm">$$(P/A,i,n)=(P/F,i,n)\cdot(F/A,i,n)$$</div></div>
+      <div class="card"><div class="lbl accent-v mb-2">Lectura financiera de la primera</div>
+        <p class="text-xs text-[#999] leading-relaxed mb-3">Recuperar un capital P en n años equivale a <span class="text-white">pagar los intereses iP cada año</span> y además <span class="text-white">depositar en un fondo</span> la anualidad que acumula P al final.</p>
+        <div class="text-xs">$$A = \underbrace{iP}_{\text{servicio}} + \underbrace{P\,(A/F,i,n)}_{\text{reposición}}$$</div>
+        <p class="text-[10px] text-[#777] leading-relaxed mt-3">Esta descomposición es la base del costo de recuperación de capital (Tema 7) y del análisis de reemplazo (Tema 12).</p></div>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[25%] p-6 lab-panel flex flex-col gap-5 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 02</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">CALCULADORA</span><br><span class="font-bold text-white text-2xl">LOS 6 FACTORES</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Su tabla de factores, viva. Compruebe las dos identidades sin memorizarlas.</p>
+      </div>
+      <div class="space-y-4 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa i por periodo</span><span id="l2-i-val" class="font-mono accent-t">12.00%</span></div>
+          <input type="range" id="l2-i" min="0.5" max="30" step="0.25" value="12" oninput="lab2()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Periodos n</span><span id="l2-n-val" class="font-mono accent-v">8</span></div>
+          <input type="range" id="l2-n" min="1" max="50" step="1" value="8" oninput="lab2()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="lbl mb-1">Monto de prueba</div>
+          <input type="number" id="l2-m" value="100000" step="10000" oninput="lab2()">
+        </div>
+      </div>
+      <div class="border-t border-[#1f1f1f] pt-4 space-y-3">
+        <div class="lbl">Verificación de identidades</div>
+        <div><div class="text-[9px] text-[#666] mb-1">(A/P) − (A/F) debe dar exactamente i</div><div id="l2-id1" class="font-mono text-sm text-[#2dd4bf]">—</div></div>
+        <div><div class="text-[9px] text-[#666] mb-1">(P/F)·(F/A) debe dar exactamente (P/A)</div><div id="l2-id2" class="font-mono text-sm text-[#2dd4bf]">—</div></div>
+      </div>
+      <div class="border-t border-[#1f1f1f] pt-4">
+        <div class="lbl mb-2">Pregunta guía</div>
+        <p class="text-[10px] text-[#777] leading-relaxed">Suba n hasta 50 con i = 12%. ¿Hacia qué valor tiende (P/A)? Compárelo con 1/i. Ese límite es el costo capitalizado de la Sesión 2.</p>
+      </div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div class="grid md:grid-cols-2 gap-4 mb-5" id="l2-cards"></div>
+      <div id="l2-plot" style="height:300px"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Gradientes: series que cambian</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <div class="lbl accent-t mb-3">Gradiente aritmético · crece en cantidad constante G</div>
+        <p class="text-xs text-[#999] leading-relaxed mb-4">Serie <span class="font-mono">0, G, 2G, …, (n−1)G</span> en t = 1…n.</p>
+        <div class="card !bg-[#140c08] !border-[#fb7185]/40 mb-4">
+          <p class="text-xs text-[#ccc] leading-relaxed"><span class="accent-r font-semibold">Atención:</span> el gradiente <span class="text-white">empieza en t = 2</span>. Un flujo real A₁, A₁+G, … se descompone en una serie uniforme <em>más</em> un gradiente puro.</p>
+        </div>
+        <div class="text-sm mb-3">$$P = A_1\,(P/A,i,n) + G\,(P/G,i,n)$$</div>
+        <div class="text-xs text-[#aaa]">$$(P/G,i,n)=\frac{1}{i}\left[\frac{(1+i)^n-1}{i(1+i)^n}-\frac{n}{(1+i)^n}\right]$$</div>
+        <div class="text-xs text-[#aaa] mt-2">$$(A/G,i,n)=\frac{1}{i}-\frac{n}{(1+i)^n-1}$$</div>
+      </div>
+      <div class="card">
+        <div class="lbl accent-v mb-3">Gradiente geométrico · crece a tasa constante g</div>
+        <p class="text-xs text-[#999] leading-relaxed mb-4">Serie <span class="font-mono">A₁, A₁(1+g), …, A₁(1+g)ⁿ⁻¹</span>.</p>
+        <div class="text-sm mb-4">$$P = A_1\cdot(P/A,g,i,n)$$</div>
+        <div class="text-xs text-[#aaa] mb-4">$$(P/A,g,i,n)=\begin{cases}\dfrac{1-\left(\frac{1+g}{1+i}\right)^{n}}{i-g} & i\neq g\\[.7em]\dfrac{n}{1+i} & i = g\end{cases}$$</div>
+        <ul class="text-xs text-[#999] space-y-2 leading-relaxed">
+          <li>· Modela salarios, energía, rentas indexadas.</li>
+          <li>· <span class="text-white">g puede ser negativo</span>: producción de un pozo, demanda en declive.</li>
+          <li>· El caso i = g no es singularidad: es el límite, y da un VP <em>finito</em>.</li>
+          <li>· Si n → ∞ y g &lt; i: <span class="font-mono accent-t">P → A₁/(i−g)</span>, el modelo de Gordon. Puente con el costo capitalizado.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[25%] p-6 lab-panel flex flex-col gap-5 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 03</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">SERIES</span><br><span class="font-bold text-white text-2xl">GRADIENTES</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Cambie entre aritmético y geométrico. Observe qué pasa cuando g se acerca a i, y cuando g es negativo.</p>
+      </div>
+      <div class="space-y-4 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Tipo de gradiente</div>
+          <select id="l3-tipo" onchange="lab3()"><option value="arit">Aritmético (G constante)</option><option value="geo">Geométrico (g %)</option></select></div>
+        <div><div class="lbl mb-1">Primer flujo A₁</div><input type="number" id="l3-a1" value="120000" step="10000" oninput="lab3()"></div>
+        <div id="l3-g-wrap" class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Gradiente G</span><span id="l3-g-val" class="font-mono accent-r">$15,000</span></div>
+          <input type="range" id="l3-g" min="-40000" max="60000" step="2500" value="15000" oninput="lab3()">
+        </div>
+        <div id="l3-gg-wrap" class="flex-col gap-1 hidden">
+          <div class="flex justify-between items-center lbl"><span>Tasa g</span><span id="l3-gg-val" class="font-mono accent-r">6.0%</span></div>
+          <input type="range" id="l3-gg" min="-15" max="25" step="0.5" value="6" oninput="lab3()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa i</span><span id="l3-i-val" class="font-mono accent-t">12.0%</span></div>
+          <input type="range" id="l3-i" min="1" max="30" step="0.5" value="12" oninput="lab3()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Periodos n</span><span id="l3-n-val" class="font-mono accent-v">8</span></div>
+          <input type="range" id="l3-n" min="2" max="30" step="1" value="8" oninput="lab3()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Valor presente total</div><div id="l3-vp" class="font-mono text-lg text-white">—</div></div>
+        <div><div class="lbl mb-1">Anualidad equivalente</div><div id="l3-a" class="font-mono text-lg accent-t">—</div></div>
+        <div><div class="lbl mb-1">Aporte del gradiente</div><div id="l3-ap" class="font-mono text-lg accent-r">—</div></div>
+      </div>
+      <div id="l3-nota" class="border-t border-[#1f1f1f] pt-4 text-[10px] text-[#777] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-5"><div id="l3-plot" class="w-full h-full"></div></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Nominal, efectiva y continua</h2>
+    <div class="card border-[#fb7185]/40 mb-6">
+      <div class="lbl accent-r mb-2">Tasa nominal r</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Es una <span class="text-white font-semibold">convención de cotización</span>: la tasa periódica multiplicada por el número de periodos. No es una tasa de rendimiento. <span class="text-white">Nunca se usa directamente en un factor.</span></p>
+    </div>
+    <div class="text-center my-7">$$i_{\text{periodo}}=\frac{r}{m}, \qquad i_{\text{efectiva anual}}=\left(1+\frac{r}{m}\right)^{m}-1, \qquad \lim_{m\to\infty} = e^{r}-1$$</div>
+    <h3 class="text-sm font-bold text-white uppercase tracking-[.15em] mb-3">Efectiva anual con r = 18%</h3>
+    <table class="dt mb-5">
+      <thead><tr><th>m</th><th>1</th><th>2</th><th>4</th><th>12</th><th>365</th><th>∞</th></tr></thead>
+      <tbody><tr><td>i efectiva</td><td>18.0000%</td><td>18.8100%</td><td>19.2519%</td><td class="accent-t">19.5618%</td><td>19.7164%</td><td class="accent-v">19.7217%</td></tr></tbody>
+    </table>
+    <div class="card border-[#a78bfa]/40">
+      <p class="text-sm text-[#ccc] leading-relaxed">El salto de m = 1 a m = 12 vale <span class="text-white font-semibold">1.56 puntos</span>. De m = 12 a m = ∞, solo <span class="text-white font-semibold">0.16</span>. La capitalización continua es una conveniencia analítica, no una gran diferencia numérica.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[25%] p-6 lab-panel flex flex-col gap-5 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 04</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">FRECUENCIA DE</span><br><span class="font-bold text-white text-2xl">CAPITALIZACIÓN</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Compare cuatro ofertas de crédito reales (Ejercicio 1.4) o fije su propia nominal y vea la convergencia hacia <span class="font-mono">e^r − 1</span>.</p>
+      </div>
+      <div class="space-y-4 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Nominal r anual</span><span id="l4-r-val" class="font-mono accent-t">18.00%</span></div>
+          <input type="range" id="l4-r" min="1" max="60" step="0.1" value="18" oninput="lab4()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Capitalizaciones m / año</span><span id="l4-m-val" class="font-mono accent-v">12</span></div>
+          <input type="range" id="l4-m" min="1" max="365" step="1" value="12" oninput="lab4()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">i por periodo = r/m</div><div id="l4-ip" class="font-mono text-base text-[#bbb]">—</div></div>
+        <div><div class="lbl mb-1">i efectiva anual</div><div id="l4-ief" class="font-mono text-lg accent-t">—</div></div>
+        <div><div class="lbl mb-1">Límite continuo e^r − 1</div><div id="l4-icont" class="font-mono text-lg accent-v">—</div></div>
+        <div><div class="lbl mb-1">Cuánto falta para el límite</div><div id="l4-brecha" class="font-mono text-base text-[#fb7185]">—</div></div>
+      </div>
+      <div class="border-t border-[#1f1f1f] pt-4">
+        <div class="lbl mb-2">Ejercicio 1.4 · cuatro ofertas</div>
+        <p class="text-[10px] text-[#777] leading-relaxed">La tabla de la derecha las ordena en vivo. Note que la opción D tiene la <span class="text-white">nominal más baja</span> y aun así no es la más barata.</p>
+      </div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l4-plot" style="height:300px" class="mb-5"></div>
+      <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Ejercicio 1.4 — ordenamiento por costo real</h3>
+      <table class="dt" id="l4-tabla"></table>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Periodo de pago vs. periodo de capitalización</h2>
+    <table class="dt mb-6">
+      <thead><tr><th>Caso</th><th style="text-align:left">Regla</th><th style="text-align:left">Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td class="accent-t">PP = CP</td><td style="text-align:left">Usar i = r/m directo.</td><td style="text-align:left">Pagos mensuales, capitalización mensual.</td></tr>
+        <tr><td class="accent-v">PP &gt; CP</td><td style="text-align:left">Convertir i al <span class="text-white">periodo de pago</span> con (1+i<sub>CP</sub>)<sup>k</sup> − 1.</td><td style="text-align:left">Depósitos trimestrales, capitalización mensual.</td></tr>
+        <tr><td class="accent-r">PP &lt; CP</td><td style="text-align:left">Depende de la política: sin interés intraperiodo, o capitalización continua.</td><td style="text-align:left">Depósitos mensuales, capitalización trimestral.</td></tr>
+      </tbody>
+    </table>
+    <div class="card border-[#2dd4bf]/40 mb-5">
+      <div class="lbl accent-t mb-2">La regla que resuelve todo</div>
+      <p class="text-base text-[#ddd] leading-relaxed">Lleve siempre la tasa al <span class="text-white font-semibold">periodo en que ocurren los flujos</span>, y luego n = número de esos periodos. No hay excepción.</p>
+    </div>
+    <div class="card border-[#fb7185]/40">
+      <div class="lbl accent-r mb-2">El error clásico · dividir o multiplicar tasas efectivas</div>
+      <div class="grid md:grid-cols-2 gap-4 mt-3">
+        <div><p class="text-xs text-[#fb7185] mb-1 font-mono">MAL</p><div class="text-sm">$$i_{\text{trim}}=3\times i_{\text{mens}} = 3.00\%$$</div></div>
+        <div><p class="text-xs text-[#2dd4bf] mb-1 font-mono">BIEN</p><div class="text-sm">$$i_{\text{trim}}=(1.01)^3-1 = 3.0301\%$$</div></div>
+      </div>
+      <p class="text-xs text-[#999] leading-relaxed mt-3">Parece pequeño, pero compuesto 20 trimestres produce ~0.31% de error en el valor futuro, y el sesgo es <span class="text-white">sistemático</span>: siempre subestima.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[27%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 05</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">CONSTRUCTOR DE</span><br><span class="font-bold text-white text-2xl">FLUJO MIXTO</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Edite los flujos año por año. El VP, la anualidad y la TIR se recalculan al instante. Viene cargado con el Ejercicio 1.6.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa i</span><span id="l5-i-val" class="font-mono accent-t">10.0%</span></div>
+          <input type="range" id="l5-i" min="0" max="40" step="0.5" value="10" oninput="lab5()">
+        </div>
+        <div class="flex gap-2">
+          <button onclick="l5Preset('ej16')" class="flex-1 text-[9px] font-mono uppercase tracking-wider border border-[#333] text-[#999] py-2 rounded hover:border-[#2dd4bf] hover:text-[#2dd4bf] transition">Ej 1.6</button>
+          <button onclick="l5Preset('simple')" class="flex-1 text-[9px] font-mono uppercase tracking-wider border border-[#333] text-[#999] py-2 rounded hover:border-[#2dd4bf] hover:text-[#2dd4bf] transition">Simple</button>
+          <button onclick="l5Preset('clear')" class="flex-1 text-[9px] font-mono uppercase tracking-wider border border-[#333] text-[#999] py-2 rounded hover:border-[#fb7185] hover:text-[#fb7185] transition">Limpiar</button>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="l5Row(1)" class="flex-1 text-[9px] font-mono uppercase tracking-wider border border-[#333] text-[#999] py-2 rounded hover:border-[#a78bfa] hover:text-[#a78bfa] transition">+ Año</button>
+          <button onclick="l5Row(-1)" class="flex-1 text-[9px] font-mono uppercase tracking-wider border border-[#333] text-[#999] py-2 rounded hover:border-[#a78bfa] hover:text-[#a78bfa] transition">− Año</button>
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Valor presente</div><div id="l5-vp" class="font-mono text-lg text-white">—</div></div>
+        <div><div class="lbl mb-1">Anualidad equivalente</div><div id="l5-va" class="font-mono text-base accent-t">—</div></div>
+        <div><div class="lbl mb-1">TIR</div><div id="l5-tir" class="font-mono text-lg accent-v">—</div></div>
+        <div><div class="lbl mb-1">Cambios de signo · Descartes</div><div id="l5-signos" class="font-mono text-base text-[#fb7185]">—</div></div>
+      </div>
+      <div id="l5-veredicto" class="border-t border-[#1f1f1f] pt-4 text-[10px] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-5 flex flex-col gap-3 overflow-hidden">
+      <div id="l5-plot" style="height:46%"></div>
+      <div class="flex-1 overflow-y-auto"><table class="dt" id="l5-tabla"></table></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-1">Ejercicios de la sesión</h2>
+    <p class="text-sm text-[#777] mb-6">Resuélvalos por las tres rutas. Las soluciones paso a paso están en el PDF del curso.</p>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="card"><div class="lbl accent-t mb-2">Ejercicio 1.1</div><p class="text-sm text-white font-semibold mb-2">Pago de contado contra pago diferido</p>
+        <p class="text-xs text-[#999] leading-relaxed">Equipo en $850,000 de contado o $1,300,000 en 5 años. TREMA 8%. Decidir por VP, hallar la tasa implícita, comparar con interés simple y encontrar la TREMA de indiferencia.</p></div>
+      <div class="card"><div class="lbl accent-t mb-2">Ejercicio 1.2</div><p class="text-sm text-white font-semibold mb-2">Gradiente aritmético</p>
+        <p class="text-xs text-[#999] leading-relaxed">Mantenimiento de $120,000 creciendo $15,000 anuales, 8 años, i = 12%. Obtener VP y la anualidad por dos rutas distintas.</p></div>
+      <div class="card"><div class="lbl accent-v mb-2">Ejercicio 1.3</div><p class="text-sm text-white font-semibold mb-2">Gradiente geométrico</p>
+        <p class="text-xs text-[#999] leading-relaxed">Energía de $480,000 creciendo 6% anual, 10 años, i = 11%. Incluye los casos g = i, g negativa y serie perpetua.</p></div>
+      <div class="card"><div class="lbl accent-v mb-2">Ejercicio 1.4</div><p class="text-sm text-white font-semibold mb-2">Comparación de ofertas de crédito</p>
+        <p class="text-xs text-[#999] leading-relaxed">Cuatro cotizaciones con distinta frecuencia. Ordenar por costo real y explicar por qué la nominal más baja no gana.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Ejercicio 1.5</div><p class="text-sm text-white font-semibold mb-2">PP ≠ CP</p>
+        <p class="text-xs text-[#999] leading-relaxed">Depósitos trimestrales de $25,000, 5 años, 12% nominal capitalizable mensualmente. Cuantificar el error de usar 3% trimestral.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Ejercicio 1.6</div><p class="text-sm text-white font-semibold mb-2">Integrador: flujo mixto</p>
+        <p class="text-xs text-[#999] leading-relaxed">Inversión, serie uniforme, gradiente decreciente diferido y salvamento. VP por descomposición, verificación flujo a flujo y TIR. Cargado en el Laboratorio 05.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">Cierre y referencias</h2>
+    <div class="card border-[#2dd4bf]/40 mb-6">
+      <div class="lbl accent-t mb-3">Lo que debe quedar</div>
+      <ol class="text-sm text-[#ccc] space-y-2 leading-relaxed list-decimal list-inside">
+        <li>La TREMA es una decisión, no un dato. Todo resultado se reporta con su sensibilidad a <span class="font-mono">i</span>.</li>
+        <li>Los seis factores son una sola identidad algebraica vista desde seis ángulos.</li>
+        <li>El valor presente de una serie cae <span class="text-white font-semibold">un periodo antes</span> del primer pago.</li>
+        <li>Nunca opere con tasas nominales; conviértalas al periodo de los flujos.</li>
+      </ol>
+    </div>
+    <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Referencias</h3>
+    <ul class="text-xs text-[#888] space-y-2 leading-relaxed">
+      <li>Blank, L. y Tarquin, A. (2018). <em>Ingeniería económica</em> (8.ª ed.). McGraw-Hill. Caps. 1–4.</li>
+      <li>Sullivan, W., Wicks, E. y Koelling, C. P. (2019). <em>Ingeniería económica de DeGarmo</em> (17.ª ed.). Pearson. Caps. 1–4.</li>
+      <li>Park, C. S. (2019). <em>Contemporary Engineering Economics</em> (6.ª ed.). Pearson. Caps. 2–4.</li>
+      <li>Newnan, D., Lavelle, J. y Eschenbach, T. (2020). <em>Engineering Economic Analysis</em> (14.ª ed.). Oxford University Press. Caps. 3–4.</li>
+      <li>Thuesen, G. J. y Fabrycky, W. J. (1993). <em>Engineering Economy</em> (9.ª ed.). Prentice Hall. Cap. 2, deducción de factores.</li>
+      <li>Baca Urbina, G. (2013). <em>Fundamentos de ingeniería económica</em> (5.ª ed.). McGraw-Hill. Caps. 1–3, contexto mexicano.</li>
+    </ul>
+  </div>
+</div>
+
+<!--SCRIPT-->
+// ===== Curva de compromiso de costo =====
+function drawCommit(){
+  Plotly.newPlot('p-commit',[
+    {x:[0,10,20,35,55,80,100],y:[0,45,65,80,90,96,100],name:'Costo comprometido',type:'scatter',mode:'lines',line:{color:'#fb7185',width:3,shape:'spline'}},
+    {x:[0,10,20,35,55,80,100],y:[0,3,8,18,40,75,100],name:'Costo erogado',type:'scatter',mode:'lines',line:{color:'#2dd4bf',width:3,dash:'dash',shape:'spline'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'Avance del ciclo de vida (%)',font:{size:10}}},
+     yaxis:{...PL.yaxis,title:{text:'% acumulado',font:{size:10}}}},PLC);
+}
+
+// ===== LAB 1: simple vs compuesto =====
+function lab1(){
+  const P=+document.getElementById('l1-p').value, i=+document.getElementById('l1-i').value/100, n=+document.getElementById('l1-n').value;
+  document.getElementById('l1-p-val').innerText=money0(P);
+  document.getElementById('l1-i-val').innerText=(i*100).toFixed(1)+'%';
+  document.getElementById('l1-n-val').innerText=n;
+  const fs=P*(1+i*n), fc=P*FP(i,n);
+  document.getElementById('l1-fs').innerText=money(fs);
+  document.getElementById('l1-fc').innerText=money(fc);
+  document.getElementById('l1-gap').innerText=money(fc-fs);
+  document.getElementById('l1-gapp').innerText=((fc/fs-1)*100).toFixed(2)+'%';
+  const xs=[],ys=[],yc=[];
+  for(let t=0;t<=n;t++){xs.push(t);ys.push(P*(1+i*t));yc.push(P*FP(i,t));}
+  Plotly.react('l1-plot',[
+    {x:xs,y:yc,name:'Compuesto',type:'scatter',mode:'lines',line:{color:'#2dd4bf',width:3},fill:'tonexty',fillcolor:'rgba(45,212,191,.07)'},
+    {x:xs,y:ys,name:'Simple',type:'scatter',mode:'lines',line:{color:'#fb7185',width:2.5,dash:'dash'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'periodos',font:{size:10}}},
+     yaxis:{...PL.yaxis,title:{text:'valor futuro',font:{size:10}},tickformat:'$,.0f'}},PLC);
+}
+
+// ===== LAB 2: los 6 factores =====
+function lab2(){
+  const i=+document.getElementById('l2-i').value/100, n=+document.getElementById('l2-n').value, M=+document.getElementById('l2-m').value||0;
+  document.getElementById('l2-i-val').innerText=(i*100).toFixed(2)+'%';
+  document.getElementById('l2-n-val').innerText=n;
+  const fac=[
+    ['F/P','P → F',FP(i,n),'#2dd4bf'],['P/F','F → P',PF(i,n),'#2dd4bf'],
+    ['F/A','A → F',FA(i,n),'#a78bfa'],['A/F','F → A',AF(i,n),'#a78bfa'],
+    ['P/A','A → P',PA(i,n),'#fb7185'],['A/P','P → A',AP(i,n),'#fb7185']];
+  document.getElementById('l2-cards').innerHTML=fac.map(f=>
+    `<div class="card !p-4"><div class="flex justify-between items-baseline mb-2">
+       <span class="font-mono text-sm" style="color:${f[3]}">(${f[0]}, ${(i*100).toFixed(2)}%, ${n})</span>
+       <span class="text-[9px] text-[#666] font-mono">${f[1]}</span></div>
+     <div class="font-mono text-2xl text-white mb-1">${f5(f[2])}</div>
+     <div class="text-[10px] text-[#777] font-mono">${money0(M)} × factor = ${money(M*f[2])}</div></div>`).join('');
+  const d1=AP(i,n)-AF(i,n), d2=PF(i,n)*FA(i,n);
+  document.getElementById('l2-id1').innerText=`${f5(d1)}  =  i = ${f5(i)}  ✓`;
+  document.getElementById('l2-id2').innerText=`${f5(d2)}  =  ${f5(PA(i,n))}  ✓`;
+  const ns=[],pa=[],ap_=[];
+  for(let k=1;k<=Math.max(n,30);k++){ns.push(k);pa.push(PA(i,k));ap_.push(AP(i,k));}
+  Plotly.react('l2-plot',[
+    {x:ns,y:pa,name:'(P/A, i, n)',type:'scatter',mode:'lines',line:{color:'#fb7185',width:2.5}},
+    {x:ns,y:ns.map(()=>1/i),name:'límite 1/i (costo capitalizado)',type:'scatter',mode:'lines',line:{color:'#a78bfa',width:1.5,dash:'dot'}},
+    {x:[n],y:[PA(i,n)],name:'n actual',type:'scatter',mode:'markers',marker:{color:'#fff',size:9}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'n',font:{size:10}}},yaxis:{...PL.yaxis,title:{text:'(P/A, i, n)',font:{size:10}}}},PLC);
+}
+
+// ===== LAB 3: gradientes =====
+function lab3(){
+  const tipo=document.getElementById('l3-tipo').value;
+  const A1=+document.getElementById('l3-a1').value||0;
+  const G=+document.getElementById('l3-g').value, gg=+document.getElementById('l3-gg').value/100;
+  const i=+document.getElementById('l3-i').value/100, n=+document.getElementById('l3-n').value;
+  document.getElementById('l3-g-val').innerText=money0(G);
+  document.getElementById('l3-gg-val').innerText=(gg*100).toFixed(1)+'%';
+  document.getElementById('l3-i-val').innerText=(i*100).toFixed(1)+'%';
+  document.getElementById('l3-n-val').innerText=n;
+  document.getElementById('l3-g-wrap').className=tipo==='arit'?'flex flex-col gap-1':'hidden';
+  document.getElementById('l3-gg-wrap').className=tipo==='geo'?'flex flex-col gap-1':'hidden';
+  let serie=[],vp,base,aporte,nota;
+  if(tipo==='arit'){
+    for(let t=1;t<=n;t++)serie.push(A1+(t-1)*G);
+    base=A1*PA(i,n); aporte=G*PG(i,n); vp=base+aporte;
+    nota=`<span class="accent-t">(P/A, i, n)</span> = ${f5(PA(i,n))} &nbsp;·&nbsp; <span class="accent-r">(P/G, i, n)</span> = ${f5(PG(i,n))}<br><span class="accent-v">(A/G, i, n)</span> = ${f5(AG(i,n))}<br><br>Verificación por la otra ruta: A = A₁ + G(A/G) = <span class="text-white font-mono">${money(A1+G*AG(i,n))}</span>`;
+  }else{
+    for(let t=1;t<=n;t++)serie.push(A1*Math.pow(1+gg,t-1));
+    base=A1*PA(i,n); vp=A1*Pg(i,gg,n); aporte=vp-base;
+    const perp=gg<i?money(A1/(i-gg)):'divergente (g ≥ i)';
+    nota=`<span class="accent-t">(P/A, g, i, n)</span> = ${f5(Pg(i,gg,n))}<br><br>Si la serie fuera <span class="text-white">perpetua</span>: ${perp}<br>${gg<i?`Los ${n} años capturan el <span class="text-white font-mono">${(vp/(A1/(i-gg))*100).toFixed(2)}%</span> del valor perpetuo.`:'Con g ≥ i la serie perpetua no converge.'}${Math.abs(gg-i)<0.004?'<br><br><span class="accent-r">Caso g ≈ i:</span> el factor tiende a n/(1+i), no a infinito.':''}`;
+  }
+  document.getElementById('l3-vp').innerText=money(vp);
+  document.getElementById('l3-a').innerText=money(vp*AP(i,n));
+  document.getElementById('l3-ap').innerText=money(aporte)+'  ('+(aporte/vp*100).toFixed(1)+'%)';
+  document.getElementById('l3-nota').innerHTML=nota;
+  const ts=serie.map((_,k)=>k+1), vps=serie.map((v,k)=>v*PF(i,k+1));
+  Plotly.react('l3-plot',[
+    {x:ts,y:serie,name:'Flujo nominal',type:'bar',marker:{color:'#2dd4bf',opacity:.75}},
+    {x:ts,y:vps,name:'Valor presente de cada flujo',type:'bar',marker:{color:'#a78bfa',opacity:.9}}
+  ],{...PL,barmode:'overlay',xaxis:{...PL.xaxis,title:{text:'periodo',font:{size:10}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'monto',font:{size:10}},tickformat:'$,.0f'}},PLC);
+}
+
+// ===== LAB 4: frecuencia de capitalización =====
+const OFERTAS=[['A','capitalizable mensualmente',0.18,12],['B','capitalizable trimestralmente',0.185,4],
+               ['C','capitalizable semestralmente',0.192,2],['D','capitalización continua',0.179,0]];
+function lab4(){
+  const r=+document.getElementById('l4-r').value/100, m=+document.getElementById('l4-m').value;
+  document.getElementById('l4-r-val').innerText=(r*100).toFixed(2)+'%';
+  document.getElementById('l4-m-val').innerText=m;
+  const ief=Math.pow(1+r/m,m)-1, ic=Math.exp(r)-1;
+  document.getElementById('l4-ip').innerText=pct(r/m,6);
+  document.getElementById('l4-ief').innerText=pct(ief);
+  document.getElementById('l4-icont').innerText=pct(ic);
+  document.getElementById('l4-brecha').innerText=((ic-ief)*10000).toFixed(2)+' puntos base';
+  const ms=[],ys=[];
+  for(const k of [1,2,3,4,6,12,24,52,104,365])if(k<=365){ms.push(k);ys.push((Math.pow(1+r/k,k)-1)*100);}
+  Plotly.react('l4-plot',[
+    {x:ms,y:ys,name:'i efectiva',type:'scatter',mode:'lines+markers',line:{color:'#2dd4bf',width:2.5},marker:{size:5}},
+    {x:ms,y:ms.map(()=>ic*100),name:'límite continuo',type:'scatter',mode:'lines',line:{color:'#a78bfa',width:1.5,dash:'dot'}},
+    {x:[m],y:[ief*100],name:'m actual',type:'scatter',mode:'markers',marker:{color:'#fff',size:11,symbol:'diamond'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'capitalizaciones por año (escala log)',font:{size:10}},type:'log'},
+     yaxis:{...PL.yaxis,title:{text:'i efectiva anual (%)',font:{size:10}}}},PLC);
+  const filas=OFERTAS.map(o=>{const ie=o[3]===0?Math.exp(o[2])-1:Math.pow(1+o[2]/o[3],o[3])-1;return{k:o[0],d:o[1],nom:o[2],ie};})
+    .sort((a,b)=>a.ie-b.ie);
+  document.getElementById('l4-tabla').innerHTML=
+    '<thead><tr><th>Opción</th><th style="text-align:left">Cotización</th><th>Nominal</th><th>Efectiva</th><th>Orden</th></tr></thead><tbody>'+
+    filas.map((f,k)=>`<tr class="${k===0?'hl':''}"><td>${f.k}</td><td style="text-align:left">${f.d}</td><td>${pct(f.nom,1)}</td><td>${pct(f.ie)}</td><td>${k===0?'más barata':k===filas.length-1?'más cara':(k+1)+'.º'}</td></tr>`).join('')+'</tbody>';
+}
+
+// ===== LAB 5: constructor de flujo mixto =====
+let l5cf=[];
+function l5Preset(p){
+  if(p==='ej16'){l5cf=[-2400000,600000,600000,600000,600000,600000,560000,525000,490000,455000,420000,385000,800000];
+    document.getElementById('l5-i').value=10;}
+  else if(p==='simple'){l5cf=[-3200000,780000,940000,1100000,1250000,1250000,1250000];document.getElementById('l5-i').value=15;}
+  else l5cf=[-1000000,0,0,0,0];
+  l5Render();lab5();
+}
+function l5Row(d){
+  if(d>0&&l5cf.length<31)l5cf.push(0);
+  if(d<0&&l5cf.length>2)l5cf.pop();
+  l5Render();lab5();
+}
+function l5Render(){
+  document.getElementById('l5-tabla').innerHTML=
+    '<thead><tr><th>t</th><th>Flujo de efectivo</th><th>Factor (1+i)⁻ᵗ</th><th>Valor presente</th><th>VP acumulado</th></tr></thead><tbody id="l5-tb"></tbody>';
+  const tb=document.getElementById('l5-tb');
+  tb.innerHTML=l5cf.map((v,t)=>
+    `<tr><td class="accent-t">${t}</td>
+     <td><input type="number" value="${v}" step="10000" style="text-align:right" oninput="l5Set(${t},this.value)"></td>
+     <td id="l5-f${t}">—</td><td id="l5-v${t}">—</td><td id="l5-a${t}">—</td></tr>`).join('');
+}
+function l5Set(t,v){l5cf[t]=+v||0;lab5();}
+function lab5(){
+  const i=+document.getElementById('l5-i').value/100;
+  document.getElementById('l5-i-val').innerText=(i*100).toFixed(1)+'%';
+  let acc=0;
+  l5cf.forEach((v,t)=>{
+    const f=PF(i,t),vp=v*f;acc+=vp;
+    const ef=document.getElementById('l5-f'+t);if(!ef)return;
+    ef.innerText=f.toFixed(6);
+    document.getElementById('l5-v'+t).innerText=money(vp);
+    const ea=document.getElementById('l5-a'+t);ea.innerText=money(acc);
+    ea.style.color=acc>=0?'#2dd4bf':'#fb7185';
+  });
+  const vp=npv(i,l5cf), n=l5cf.length-1;
+  document.getElementById('l5-vp').innerText=money(vp);
+  document.getElementById('l5-vp').style.color=vp>=0?'#fff':'#fb7185';
+  document.getElementById('l5-va').innerText=n>0?money(vp*AP(i,n)):'—';
+  let signos=0;
+  for(let k=1;k<l5cf.length;k++){
+    const a=l5cf.slice(0,k).reverse().find(x=>x!==0);
+    if(a!==undefined&&l5cf[k]!==0&&Math.sign(a)!==Math.sign(l5cf[k]))signos++;
+  }
+  document.getElementById('l5-signos').innerText=signos+(signos===1?' cambio':' cambios');
+  const raices=irrAll(l5cf);
+  const el=document.getElementById('l5-tir'), vd=document.getElementById('l5-veredicto');
+  if(raices.length===0){el.innerText='no existe';el.style.color='#666';
+    vd.innerHTML='<span class="accent-r">Sin TIR real positiva.</span> Use el valor presente como criterio.';}
+  else if(raices.length===1){el.innerText=pct(raices[0]);el.style.color='#a78bfa';
+    vd.innerHTML=`<span class="accent-t">TIR única.</span> ${signos===1?'Un solo cambio de signo: Descartes garantiza unicidad.':'Verifique el criterio de Norstrom sobre los flujos acumulados.'}<br><br>${raices[0]>i?'<span class="text-white">TIR &gt; i → proyecto aceptable</span>, consistente con VP &gt; 0.':'<span class="text-white">TIR &lt; i → rechazar</span>, consistente con VP &lt; 0.'}`;}
+  else{el.innerText=raices.map(r=>pct(r,2)).join('  ·  ');el.style.color='#fb7185';
+    vd.innerHTML=`<span class="accent-r">${raices.length} raíces.</span> El flujo no es convencional: alterna entre inversión y financiamiento. <span class="text-white">Ninguna TIR debe usarse para decidir.</span> Reporte el VP y, si hace falta una tasa comparable, la TIRM. Se desarrolla en la Sesión 3.`;}
+  const ts=l5cf.map((_,t)=>t);
+  const xs=[],ys=[];
+  for(let k=0;k<=120;k++){const r=k/200;xs.push(r*100);ys.push(npv(r,l5cf));}
+  Plotly.react('l5-plot',[
+    {x:ts,y:l5cf,name:'Flujo de efectivo',type:'bar',marker:{color:l5cf.map(v=>v>=0?'#2dd4bf':'#fb7185')},xaxis:'x',yaxis:'y'},
+    {x:xs,y:ys,name:'VP(i)',type:'scatter',mode:'lines',line:{color:'#a78bfa',width:2.5},xaxis:'x2',yaxis:'y2'},
+    {x:raices.map(r=>r*100),y:raices.map(()=>0),name:'TIR',type:'scatter',mode:'markers',marker:{color:'#fff',size:10},xaxis:'x2',yaxis:'y2'}
+  ],{...PL,grid:{rows:1,columns:2,pattern:'independent'},
+     xaxis:{...PL.xaxis,domain:[0,.46],title:{text:'periodo',font:{size:9}}},
+     yaxis:{...PL.yaxis,tickformat:'$,.0s'},
+     xaxis2:{...PL.xaxis,domain:[.56,1],title:{text:'tasa i (%)',font:{size:9}}},
+     yaxis2:{...PL.yaxis,tickformat:'$,.0s',zeroline:true,zerolinecolor:'#555',zerolinewidth:1.5},
+     margin:{l:58,r:14,t:28,b:42}},PLC);
+}
+
+// ===== init =====
+function onSlideChange(k){
+  const ids={3:'p-commit',6:'l1-plot',9:'l2-plot',12:'l3-plot',14:'l4-plot',16:'l5-plot'};
+  if(ids[k])setTimeout(()=>{try{Plotly.Plots.resize(ids[k]);}catch(e){}},120);
+}
+window.addEventListener('load',()=>{
+  initNav();drawCommit();lab1();lab2();lab3();lab4();l5Preset('ej16');
+});

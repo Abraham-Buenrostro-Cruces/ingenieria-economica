@@ -1,0 +1,97 @@
+FUENTE DEL SITIO — Ingeniería Económica
+========================================
+
+Los cinco HTML de la carpeta superior son AUTOCONTENIDOS y funcionan
+SIN CONEXIÓN A INTERNET. Cada uno lleva dentro sus tipografías, sus
+fórmulas (KaTeX), sus gráficas (Plotly) y sus estilos (Tailwind).
+
+Se pueden copiar a una USB, mandar por correo o por WhatsApp sueltos,
+y abren igual en una máquina sin red. Pesan ~1.6 MB cada uno.
+
+Esta carpeta solo hace falta si quiere cambiar algo.
+
+
+RECONSTRUIR
+-----------
+    python build.py              sin conexión (predeterminado, ~1.6 MB)
+    python build.py --online     enlaza a los CDN (~60 KB)
+
+El primero escribe en dist/ y el segundo en dist-online/. Copie los
+archivos resultantes encima de los de la carpeta superior.
+
+La versión --online es útil mientras edita, porque los archivos son
+30 veces más chicos y se recargan al instante. Cuando termine, genere
+la versión sin conexión para los alumnos.
+
+
+ARCHIVOS
+--------
+  _core.css      estilos comunes de las cuatro sesiones
+  _core.js       motor de cálculo (factores, VP, TIR) y navegación
+  s1..s4.html    contenido de cada sesión, sin el envoltorio
+  build.py       ensambla todo
+  _assets/       librerías para la versión sin conexión
+                 fonts.css   Inter y JetBrains Mono en base64
+                 katex.css   KaTeX con sus 6 tipografías en base64
+                 katex.js    motor de fórmulas
+                 plotly.js   gráficas (bundle "basic": scatter, bar, pie)
+                 tw.css      Tailwind ya compilado
+
+
+CAMBIAR LOS COLORES
+-------------------
+En _core.css, las tres líneas de acento:
+
+    .accent-t { color:#2dd4bf }   turquesa
+    .accent-v { color:#a78bfa }   violeta
+    .accent-r { color:#fb7185 }   coral
+
+Los mismos códigos aparecen dentro de s1..s4.html en las gráficas de
+Plotly; búsquelos y reemplácelos si quiere consistencia total.
+
+
+AÑADIR UNA DIAPOSITIVA
+----------------------
+En el sNN.html correspondiente, antes del marcador <!--SCRIPT-->:
+
+    <div class="slide">
+      <div class="slide-content">
+        <h2 class="text-3xl font-bold text-white mb-5">Título</h2>
+        ...
+      </div>
+    </div>
+
+Si agrega una diapositiva ANTES de un laboratorio, corrija los índices
+de la función onSlideChange() al final del archivo: son los que
+redimensionan las gráficas de Plotly al entrar a cada laboratorio.
+
+
+SI AÑADE CLASES NUEVAS DE TAILWIND
+----------------------------------
+_assets/tw.css trae compiladas SOLO las clases que el material usa hoy.
+Si escribe una clase que no estaba (por ejemplo "grid-cols-7" donde
+antes no había), no tendrá efecto en la versión sin conexión hasta que
+regenere ese archivo:
+
+    npx tailwindcss -i entrada.css -o _assets/tw.css --content "dist/*.html" --minify
+
+donde entrada.css contiene las tres líneas:
+
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+Para comprobarlo rápido: genere con --online, revise que se vea bien
+(ahí Tailwind compila en el navegador y siempre tiene todas las clases),
+y si se ve bien online pero mal sin conexión, es esto.
+
+
+FÓRMULAS
+--------
+KaTeX. Use \( ... \) para fórmula en línea y $$ ... $$ para centrada.
+
+Las tipografías de KaTeX incrustadas son solo las 6 que el material usa
+hoy (Main-Regular, Math-Italic y Size1 a Size4). Si agrega notación que
+pida otra familia — negritas matemáticas, caligráfica, Fraktur, símbolos
+AMS — esos signos saldrán con una tipografía sustituta. Se arregla
+volviendo a generar _assets/katex.css incluyendo la familia que falte.

@@ -1,0 +1,744 @@
+<!--TITLE:Sesión 4 · Reemplazo, ingeniería de costos e integración-->
+<div class="slide active">
+  <div class="slide-content text-center">
+    <div class="badge mb-6">Sesión 4 de 4</div>
+    <h1 class="text-[4.4rem] leading-none font-black tracking-widest mb-3 neon-glow">REEMPLAZO</h1>
+    <h3 class="text-xl font-light text-[#777] tracking-[.25em] mb-10 uppercase">Ingeniería de costos e integración</h3>
+    <div class="w-16 h-1 bg-[#2dd4bf] mx-auto mb-10"></div>
+    <p class="text-lg font-semibold text-white mb-1">Ingeniería Económica</p>
+    <p class="text-xs font-medium text-[#666] uppercase tracking-[.2em] leading-relaxed">
+      Temas 12 – 13 &nbsp;·&nbsp; 4 horas<br>Análisis de reemplazo · Estimación de costos · Inflación e impuestos
+    </p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">Las dos preguntas de hoy</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-7">
+      <div class="card border-[#2dd4bf]/40"><div class="lbl accent-t mb-3">Tema 12</div>
+        <p class="text-xl text-white font-semibold leading-snug">¿Cuándo retiro un activo que todavía funciona?</p></div>
+      <div class="card border-[#fb7185]/40"><div class="lbl accent-r mb-3">Tema 13</div>
+        <p class="text-xl text-white font-semibold leading-snug">¿Cuánto costará algo que aún no existe?</p></div>
+    </div>
+    <div class="grid md:grid-cols-3 gap-3">
+      <div class="card !p-4"><div class="lbl accent-t mb-1">Bloque A · 70 min</div><p class="text-xs text-[#999] leading-relaxed">Vida económica de servicio, defensor/retador y costo marginal<br><span class="text-[#666]">Ej. 4.1 · 4.2 · 4.3</span></p></div>
+      <div class="card !p-4"><div class="lbl accent-v mb-1">Bloque B · 70 min</div><p class="text-xs text-[#999] leading-relaxed">Clases AACE, métodos paramétricos, índices y curvas de aprendizaje<br><span class="text-[#666]">Ej. 4.4 · 4.5</span></p></div>
+      <div class="card !p-4"><div class="lbl accent-r mb-1">Bloque C · 80 min</div><p class="text-xs text-[#999] leading-relaxed">Inflación y flujo después de impuestos<br><span class="text-[#666]">Ej. 4.6 · 4.7</span></p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Defensor, retador y costo hundido</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="card"><div class="lbl accent-t mb-2">Defensor</div><p class="text-sm text-[#ccc]">El activo actualmente en servicio.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Retador</div><p class="text-sm text-[#ccc]">El mejor candidato a sustituirlo.</p></div>
+    </div>
+    <div class="card border-[#fb7185]/40 mb-6">
+      <div class="lbl accent-r mb-2">La regla que casi nadie aplica bien</div>
+      <p class="text-base text-[#ddd] leading-relaxed">El valor de inversión del defensor es su <span class="text-white font-semibold">valor de mercado actual</span>, no su valor en libros ni lo que costó.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card"><div class="lbl accent-v mb-2">Costo hundido</div>
+        <p class="text-sm text-[#ccc] leading-relaxed">La diferencia entre el valor en libros y el valor de mercado. Ya ocurrió, ninguna decisión futura la modifica, y por tanto <span class="text-white">no entra al análisis</span>.</p></div>
+      <div class="card border-[#2dd4bf]/40"><div class="lbl accent-t mb-2">Perspectiva del consultor</div>
+        <p class="text-sm text-[#ccc] leading-relaxed">Suponga que no posee ningún activo. Un tercero le ofrece comprar el defensor por su valor de mercado, o comprar el retador por su precio. Bajo esa óptica el costo hundido <span class="text-white">desaparece solo</span>.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Vida económica de servicio</h2>
+    <div class="card border-[#2dd4bf]/40 mb-5">
+      <p class="text-base text-[#ddd] leading-relaxed">La VES es el número de años <span class="font-mono text-white">n</span> que <span class="text-white font-semibold">minimiza el VA total</span> del activo.</p>
+    </div>
+    <div class="text-center my-6 text-sm">$$VA_{\text{total}}(n) = \underbrace{-P\,(A/P,i,n) + MV_n\,(A/F,i,n)}_{CR(n)} \;+\; \underbrace{\left[\textstyle\sum_{t=1}^{n} -AOC_t\,(P/F,i,t)\right](A/P,i,n)}_{VA_{AOC}(n)}$$</div>
+    <div class="grid md:grid-cols-2 gap-5 mb-5">
+      <div class="card"><div class="lbl accent-t mb-2">CR(n) decrece con n</div><p class="text-sm text-[#ccc]">La inversión se reparte entre más años.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">VA_AOC(n) crece con n</div><p class="text-sm text-[#ccc]">El activo envejece y se encarece.</p></div>
+    </div>
+    <p class="text-sm text-[#999] leading-relaxed mb-5">La suma tiene forma de <span class="text-white">U</span>. El mínimo es la VES. Casi siempre es <em>menor</em> que la vida física y <em>menor</em> que la vida fiscal.</p>
+    <div class="card border-[#a78bfa]/40">
+      <div class="lbl accent-v mb-2">Variante rápida · costo marginal de un año más</div>
+      <div class="text-sm my-3">$$MC_{t} = \underbrace{MV_{t-1}\,i}_{\text{oportunidad}} + \underbrace{(MV_{t-1}-MV_t)}_{\text{pérdida de valor}} + \underbrace{AOC_t}_{\text{operación}}$$</div>
+      <p class="text-xs text-[#999] leading-relaxed">Si MC<sub>t</sub> &gt; VA del retador, conviene reemplazar de inmediato.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[27%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 16</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">LA CURVA EN U</span><br><span class="font-bold text-white text-2xl">VIDA ECONÓMICA</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 4.1. Edite los valores de mercado y los costos de operación; la VES se recalcula sola.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="text-[9px] text-[#666] mb-1">Costo inicial P</div><input type="number" id="l16-p" value="1450000" step="50000" oninput="lab16()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>TREMA</span><span id="l16-i-val" class="font-mono accent-t">12.0%</span></div>
+          <input type="range" id="l16-i" min="2" max="30" step="0.5" value="12" oninput="lab16()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Vida económica de servicio</div><div id="l16-ves" class="font-mono text-2xl text-white">—</div></div>
+        <div><div class="lbl mb-1">VA mínimo</div><div id="l16-va" class="font-mono text-base accent-t">—</div></div>
+        <div><div class="lbl mb-1">Aplanamiento del mínimo</div><div id="l16-plano" class="font-mono text-sm accent-v">—</div></div>
+      </div>
+      <div id="l16-nota" class="border-t border-[#1f1f1f] pt-4 text-[10px] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l16-plot" style="height:300px" class="mb-5"></div>
+      <table class="dt" id="l16-tabla"></table>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[27%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 17</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">DECISIÓN</span><br><span class="font-bold text-white text-2xl">DEFENSOR vs RETADOR</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicios 4.2 y 4.3. Suba el valor en libros del defensor: verá que <span class="accent-r">no cambia nada</span>. Es costo hundido.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>TREMA</span><span id="l17-i-val" class="font-mono accent-t">12.0%</span></div>
+          <input type="range" id="l17-i" min="2" max="30" step="0.5" value="12" oninput="lab17()">
+        </div>
+        <div class="lbl accent-t pt-2">Defensor · en servicio</div>
+        <div><div class="text-[9px] text-[#666] mb-1">Valor de mercado HOY</div><input type="number" id="l17-mv" value="560000" step="25000" oninput="lab17()"></div>
+        <div><div class="text-[9px] text-[#666] mb-1">Valor en LIBROS (no usado)</div><input type="number" id="l17-bv" value="980000" step="25000" oninput="lab17()"></div>
+        <div class="lbl accent-r pt-2">Retador · nuevo</div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-[9px] text-[#666] mb-1">Costo P</div><input type="number" id="l17-pc" value="2100000" step="50000" oninput="lab17()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">VES años</div><input type="number" id="l17-nc" value="8" min="1" max="20" oninput="lab17()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">AOC anual</div><input type="number" id="l17-ac" value="290000" step="10000" oninput="lab17()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">Salvamento</div><input type="number" id="l17-sc" value="450000" step="25000" oninput="lab17()"></div>
+        </div>
+      </div>
+      <div id="l17-res" class="space-y-3 border-t border-[#1f1f1f] pt-4"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l17-plot" style="height:260px" class="mb-5"></div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div><h3 class="text-xs font-bold accent-t uppercase tracking-[.15em] mb-2">VES del defensor desde hoy</h3><table class="dt" id="l17-t1"></table></div>
+        <div><h3 class="text-xs font-bold accent-v uppercase tracking-[.15em] mb-2">Costo marginal de retener</h3><table class="dt" id="l17-t2"></table></div>
+      </div>
+      <div id="l17-hundido" class="card mt-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Clases de estimación · AACE International</h2>
+    <table class="dt mb-5">
+      <thead><tr><th>Clase</th><th style="text-align:left">Madurez del diseño</th><th style="text-align:left">Método</th><th>Exactitud</th><th style="text-align:left">Uso</th></tr></thead>
+      <tbody>
+        <tr><td class="accent-r">5</td><td style="text-align:left">0 – 2%</td><td style="text-align:left">Capacidad, analogías</td><td>−30% a +50%</td><td style="text-align:left">Cribado</td></tr>
+        <tr><td class="accent-r">4</td><td style="text-align:left">1 – 15%</td><td style="text-align:left">Factores de equipo</td><td>−20% a +30%</td><td style="text-align:left">Prefactibilidad</td></tr>
+        <tr><td class="accent-a">3</td><td style="text-align:left">10 – 40%</td><td style="text-align:left">Semidetallado</td><td>−10% a +20%</td><td style="text-align:left">Autorización</td></tr>
+        <tr><td class="accent-t">2</td><td style="text-align:left">30 – 70%</td><td style="text-align:left">Cantidades detalladas</td><td>−5% a +15%</td><td style="text-align:left">Control</td></tr>
+        <tr><td class="accent-t">1</td><td style="text-align:left">50 – 100%</td><td style="text-align:left">Precios unitarios</td><td>−3% a +10%</td><td style="text-align:left">Licitación</td></tr>
+      </tbody>
+    </table>
+    <div class="card border-[#fb7185]/40 mb-5">
+      <div class="lbl accent-r mb-2">Lo que hay que reportar</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Una estimación sin su clase y su rango es <span class="text-white font-semibold">información incompleta</span>. Decir «la planta cuesta $838 millones» es distinto de decir «clase 5: entre $587 y $1,257 millones».</p>
+      <p class="text-xs text-[#888] leading-relaxed mt-3">Recuerde la curva de compromiso de costo de la Sesión 1: las decisiones más importantes se toman con las estimaciones menos precisas.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card"><div class="lbl accent-t mb-2">Regla de los seis décimos</div>
+        <div class="text-sm my-2">$$C_2 = C_1\left(\frac{Q_2}{Q_1}\right)^{x}, \quad x \approx 0.6$$</div>
+        <p class="text-xs text-[#999] leading-relaxed">Origen físico: el costo de un recipiente escala con su <em>superficie</em> (L²) y la capacidad con su <em>volumen</em> (L³), de donde x = 2/3. Varía por equipo: intercambiadores 0.6, tanques 0.5–0.7, compresores 0.8.</p></div>
+      <div class="card"><div class="lbl accent-v mb-2">Índices de costo</div>
+        <div class="text-sm my-2">$$C_{\text{hoy}} = C_{\text{base}} \times \frac{I_{\text{hoy}}}{I_{\text{base}}}$$</div>
+        <p class="text-xs text-[#999] leading-relaxed">CEPCI para industria química, Marshall &amp; Swift, ENR Construction Cost Index. En México, el INPP del INEGI por rama.</p></div>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 18</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">ESTIMACIÓN</span><br><span class="font-bold text-white text-2xl">SEIS DÉCIMOS + CEPCI</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 4.4. Mueva el exponente y vea cuánto cambia la estimación: x es un supuesto, no una constante.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-[9px] text-[#666] mb-1">Capacidad base Q₁</div><input type="number" id="l18-q1" value="150000" step="10000" oninput="lab18()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">Capacidad nueva Q₂</div><input type="number" id="l18-q2" value="240000" step="10000" oninput="lab18()"></div>
+        </div>
+        <div><div class="text-[9px] text-[#666] mb-1">Costo base C₁ (millones)</div><input type="number" id="l18-c1" value="480" step="10" oninput="lab18()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Exponente x</span><span id="l18-x-val" class="font-mono accent-t">0.60</span></div>
+          <input type="range" id="l18-x" min="0.3" max="1" step="0.01" value="0.6" oninput="lab18()">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-[9px] text-[#666] mb-1">Índice base</div><input type="number" id="l18-i1" value="607.5" step="5" oninput="lab18()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">Índice hoy</div><input type="number" id="l18-i2" value="800" step="5" oninput="lab18()"></div>
+        </div>
+        <div><div class="text-[9px] text-[#666] mb-1">Clase AACE</div>
+          <select id="l18-cl" onchange="lab18()">
+            <option value="5">Clase 5 · −30% a +50%</option><option value="4">Clase 4 · −20% a +30%</option>
+            <option value="3">Clase 3 · −10% a +20%</option><option value="2">Clase 2 · −5% a +15%</option>
+            <option value="1">Clase 1 · −3% a +10%</option></select></div>
+      </div>
+      <div id="l18-res" class="space-y-3 border-t border-[#1f1f1f] pt-4"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l18-pasos" class="card mb-5"></div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div id="l18-plot" style="height:270px"></div>
+        <div id="l18-rango" style="height:270px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Curvas de aprendizaje</h2>
+    <div class="text-center my-6">$$T_u = T_1\, u^{\,b}, \qquad b=\frac{\ln s}{\ln 2}$$</div>
+    <p class="text-sm text-[#999] leading-relaxed mb-5">donde <span class="font-mono text-white">s</span> es la tasa de aprendizaje: la fracción del tiempo que se requiere al <span class="text-white">duplicar</span> la producción acumulada.</p>
+    <table class="dt mb-5">
+      <thead><tr><th>Tasa s</th><th>70%</th><th>80%</th><th>85%</th><th>90%</th></tr></thead>
+      <tbody>
+        <tr><td>Exponente b</td><td>−0.5146</td><td>−0.3219</td><td class="accent-t">−0.2345</td><td>−0.1520</td></tr>
+        <tr><td>Aplicación típica</td><td>ensamble manual</td><td>aeroespacial</td><td>manufactura</td><td>proceso automatizado</td></tr>
+      </tbody>
+    </table>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card"><p class="text-sm text-[#ccc] leading-relaxed">T<sub>u</sub> es el tiempo de la <span class="text-white">unidad u</span>, no el promedio. Para el total hay que sumar. Modela también costo por unidad, defectos y consumo de material.</p></div>
+      <div class="card border-[#fb7185]/40"><div class="lbl accent-r mb-2">Uso crítico</div>
+        <p class="text-sm text-[#ccc] leading-relaxed">Cotizar un lote grande con el costo de la <span class="text-white">primera</span> unidad sobreestima gravemente; cotizarlo con el de la <span class="text-white">última</span>, subestima. Solo el promedio acumulado es base correcta.</p></div>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 19</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">COTIZAR UN LOTE</span><br><span class="font-bold text-white text-2xl">CURVA DE APRENDIZAJE</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 4.5. Compare el precio que saldría de la unidad 1, de la última y del promedio real.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="text-[9px] text-[#666] mb-1">Horas de la primera unidad T₁</div><input type="number" id="l19-t1" value="420" step="10" oninput="lab19()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa de aprendizaje s</span><span id="l19-s-val" class="font-mono accent-t">85%</span></div>
+          <input type="range" id="l19-s" min="60" max="100" step="1" value="85" oninput="lab19()">
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-[9px] text-[#666] mb-1">Lote 1 · hasta unidad</div><input type="number" id="l19-n1" value="20" min="1" max="200" oninput="lab19()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">Lote 2 · hasta unidad</div><input type="number" id="l19-n2" value="50" min="2" max="300" oninput="lab19()"></div>
+        </div>
+        <div><div class="text-[9px] text-[#666] mb-1">Costo por hora de mano de obra</div><input type="number" id="l19-ch" value="380" step="10" oninput="lab19()"></div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Exponente b</div><div id="l19-b" class="font-mono text-base accent-v">—</div></div>
+        <div><div class="lbl mb-1">Horas acumuladas lote 1</div><div id="l19-h1" class="font-mono text-base text-white">—</div></div>
+        <div><div class="lbl mb-1">Promedio lote 1</div><div id="l19-p1" class="font-mono text-base accent-t">—</div></div>
+        <div><div class="lbl mb-1">Horas del segundo lote</div><div id="l19-h2" class="font-mono text-base text-white">—</div></div>
+        <div><div class="lbl mb-1">Promedio segundo lote</div><div id="l19-p2" class="font-mono text-base accent-t">—</div></div>
+      </div>
+      <div id="l19-cot" class="border-t border-[#1f1f1f] pt-4 space-y-2"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l19-plot" style="height:300px" class="mb-5"></div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <table class="dt" id="l19-tabla"></table>
+        <div id="l19-nota" class="card"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Inflación: las tres tasas</h2>
+    <table class="dt mb-6">
+      <thead><tr><th>Símbolo</th><th style="text-align:left">Nombre</th><th style="text-align:left">Se aplica a</th></tr></thead>
+      <tbody>
+        <tr><td class="accent-a">f</td><td style="text-align:left">Tasa de inflación</td><td style="text-align:left">—</td></tr>
+        <tr><td class="accent-t">i</td><td style="text-align:left">Tasa <span class="text-white">real</span>, libre de inflación</td><td style="text-align:left">Pesos <span class="text-white">constantes</span>, de hoy</td></tr>
+        <tr><td class="accent-r">i<sub>f</sub></td><td style="text-align:left">Tasa <span class="text-white">de mercado</span> o corriente</td><td style="text-align:left">Pesos <span class="text-white">corrientes</span>, nominales</td></tr>
+      </tbody>
+    </table>
+    <div class="text-center my-6">$$i_f = i + f + i\cdot f \qquad\Longleftrightarrow\qquad i = \frac{1+i_f}{1+f}-1$$</div>
+    <div class="card border-[#2dd4bf]/40 mb-5">
+      <div class="lbl accent-t mb-2">La regla de consistencia</div>
+      <p class="text-base text-[#ddd] leading-relaxed">Pesos constantes se descuentan con la <span class="text-white font-semibold">tasa real</span>. Pesos corrientes, con la <span class="text-white font-semibold">tasa de mercado</span>. Nunca se mezclan. Ambas rutas dan <em>exactamente</em> el mismo valor presente.</p>
+    </div>
+    <p class="text-sm text-[#888] leading-relaxed">El término cruzado <span class="font-mono text-white">i·f</span> no es despreciable: con i = 9% y f = 5.5% vale 0.50 puntos porcentuales.</p>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 20</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">CONSISTENCIA</span><br><span class="font-bold text-white text-2xl">INFLACIÓN</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 4.6. Las dos rutas correctas coinciden al centavo. La tercera columna es el error más caro del curso.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa de mercado i_f</span><span id="l20-if-val" class="font-mono accent-r">15.0%</span></div>
+          <input type="range" id="l20-if" min="1" max="40" step="0.5" value="15" oninput="lab20()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Inflación f</span><span id="l20-f-val" class="font-mono accent-a">5.5%</span></div>
+          <input type="range" id="l20-f" min="0" max="25" step="0.1" value="5.5" oninput="lab20()">
+        </div>
+        <div><div class="text-[9px] text-[#666] mb-1">Pago anual en pesos de HOY</div><input type="number" id="l20-a" value="850000" step="25000" oninput="lab20()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Años n</span><span id="l20-n-val" class="font-mono accent-v">6</span></div>
+          <input type="range" id="l20-n" min="1" max="30" step="1" value="6" oninput="lab20()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Tasa real i</div><div id="l20-ir" class="font-mono text-lg accent-t">—</div></div>
+        <div><div class="lbl mb-1">Verificación i + f + i·f</div><div id="l20-ver" class="font-mono text-sm text-[#bbb]">—</div></div>
+        <div><div class="lbl mb-1">Término cruzado i·f</div><div id="l20-cruz" class="font-mono text-sm accent-a">—</div></div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Ruta A · constantes @ i real</div><div id="l20-va" class="font-mono text-base text-white">—</div></div>
+        <div><div class="lbl mb-1">Ruta B · corrientes @ i mercado</div><div id="l20-vb" class="font-mono text-base text-white">—</div></div>
+        <div><div class="lbl mb-1">Diferencia entre rutas</div><div id="l20-dif" class="font-mono text-base accent-t">—</div></div>
+        <div><div class="lbl mb-1">Error · constantes @ i mercado</div><div id="l20-err" class="font-mono text-base accent-r">—</div></div>
+      </div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l20-plot" style="height:260px" class="mb-5"></div>
+      <table class="dt mb-5" id="l20-tabla"></table>
+      <div id="l20-nota" class="card"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Flujo de efectivo después de impuestos</h2>
+    <div class="card border-[#2dd4bf]/40 mb-6">
+      <div class="lbl accent-t mb-3">Secuencia de cálculo, año por año</div>
+      <ol class="text-sm text-[#ccc] space-y-2 leading-relaxed list-decimal list-inside">
+        <li>Ingreso bruto menos gastos de operación: <span class="font-mono text-white">R − E</span>.</li>
+        <li>Restar la depreciación: <span class="font-mono text-white">UAI = R − E − d<sub>t</sub></span>.</li>
+        <li>Impuesto: <span class="font-mono text-white">ISR<sub>t</sub> = UAI × T</span>.</li>
+        <li><span class="text-white font-semibold">Volver a sumar la depreciación</span>, que no es salida de efectivo: <span class="font-mono text-white">ATCF<sub>t</sub> = R − E − ISR<sub>t</sub></span>.</li>
+      </ol>
+    </div>
+    <div class="card border-[#fb7185]/40 mb-5">
+      <div class="lbl accent-r mb-2">El paso 4 es donde todos se equivocan</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">La depreciación se resta para <em>calcular el impuesto</em> y se vuelve a sumar para <em>obtener el flujo</em>. Su único efecto neto es el escudo fiscal <span class="font-mono text-white">d<sub>t</sub> × T</span>.</p>
+    </div>
+    <div class="card border-[#a78bfa]/40">
+      <div class="lbl accent-v mb-2">Regla de consistencia, paralela a la de inflación</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Flujos <span class="text-white">antes</span> de impuestos → TREMA antes de impuestos. Flujos <span class="text-white">después</span> de impuestos → TREMA después de impuestos. Mezclarlas compara magnitudes incompatibles.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 21</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">INTEGRADOR FINAL</span><br><span class="font-bold text-white text-2xl">ATCF</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 4.7. Reúne equivalencia, VP, TIR, depreciación y consistencia de bases: todo el curso en una tabla.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="text-[9px] text-[#666] mb-1">Inversión B</div><input type="number" id="l21-b" value="4200000" step="100000" oninput="lab21()"></div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-[9px] text-[#666] mb-1">Ingresos R</div><input type="number" id="l21-r" value="2300000" step="50000" oninput="lab21()"></div>
+          <div><div class="text-[9px] text-[#666] mb-1">Gastos E</div><input type="number" id="l21-e" value="700000" step="50000" oninput="lab21()"></div>
+        </div>
+        <div><div class="text-[9px] text-[#666] mb-1">Venta al final del año 6</div><input type="number" id="l21-s" value="500000" step="50000" oninput="lab21()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa de ISR</span><span id="l21-t-val" class="font-mono accent-a">30%</span></div>
+          <input type="range" id="l21-t" min="0" max="50" step="1" value="30" oninput="lab21()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>TREMA después de imp.</span><span id="l21-i-val" class="font-mono accent-t">12.0%</span></div>
+          <input type="range" id="l21-i" min="2" max="35" step="0.5" value="12" oninput="lab21()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">VP después de impuestos</div><div id="l21-vp" class="font-mono text-lg text-white">—</div></div>
+        <div><div class="lbl mb-1">TIR después de impuestos</div><div id="l21-tird" class="font-mono text-lg accent-t">—</div></div>
+        <div><div class="lbl mb-1">TIR antes de impuestos</div><div id="l21-tira" class="font-mono text-base accent-r">—</div></div>
+        <div><div class="lbl mb-1">Regla práctica TIR(1−T)</div><div id="l21-regla" class="font-mono text-sm text-[#888]">—</div></div>
+        <div><div class="lbl mb-1">Flujo neto de la venta</div><div id="l21-venta" class="font-mono text-base accent-v">—</div></div>
+      </div>
+      <div id="l21-ver" class="border-t border-[#1f1f1f] pt-4 text-[10px] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <table class="dt mb-5" id="l21-tabla"></table>
+      <div id="l21-plot" style="height:280px"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-1">Ejercicios de la sesión</h2>
+    <p class="text-sm text-[#777] mb-6">Siete ejercicios, cargados en los laboratorios 16 a 21</p>
+    <div class="grid md:grid-cols-4 gap-3">
+      <div class="card !p-4"><div class="lbl accent-t mb-2">Ej. 4.1 · Lab 16</div><p class="text-xs text-white font-semibold mb-1">Vida económica de servicio</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">Tabla de CR y VA_AOC para n = 1…6. Hallar la VES e interpretar la forma de U.</p></div>
+      <div class="card !p-4"><div class="lbl accent-t mb-2">Ej. 4.2 · Lab 17</div><p class="text-xs text-white font-semibold mb-1">Defensor contra retador</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">VES del defensor desde hoy, VA del retador y el papel del valor en libros.</p></div>
+      <div class="card !p-4"><div class="lbl accent-v mb-2">Ej. 4.3 · Lab 17</div><p class="text-xs text-white font-semibold mb-1">Costo marginal de retener</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">MC de los años 4 y 5, y su descomposición en tres componentes.</p></div>
+      <div class="card !p-4"><div class="lbl accent-v mb-2">Ej. 4.4 · Lab 18</div><p class="text-xs text-white font-semibold mb-1">Seis décimos + CEPCI</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">Escalar capacidad y tiempo, reportar con rango AACE y cuantificar el error lineal.</p></div>
+      <div class="card !p-4"><div class="lbl accent-r mb-2">Ej. 4.5 · Lab 19</div><p class="text-xs text-white font-semibold mb-1">Curva de aprendizaje</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">Exponente b, propiedad de duplicación, promedio acumulado y precio mínimo del segundo lote.</p></div>
+      <div class="card !p-4"><div class="lbl accent-r mb-2">Ej. 4.6 · Lab 20</div><p class="text-xs text-white font-semibold mb-1">Inflación</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">Tasa real, las dos rutas equivalentes y el error de mezclar bases.</p></div>
+      <div class="card !p-4"><div class="lbl accent-a mb-2">Ej. 4.7 · Lab 21</div><p class="text-xs text-white font-semibold mb-1">ATCF integrador</p>
+        <p class="text-[10px] text-[#999] leading-relaxed">Tabla completa, flujo de la venta, VP y TIR antes y después de impuestos.</p></div>
+      <div class="card !p-4 border-[#2dd4bf]/40"><div class="lbl accent-t mb-2">Cierre</div>
+        <p class="text-[10px] text-[#999] leading-relaxed">El Ej. 4.7 reúne las cuatro sesiones: equivalencia, VP, TIR y depreciación, y consistencia de bases.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">Cierre del curso</h2>
+    <div class="card border-[#2dd4bf]/40 mb-6">
+      <div class="lbl accent-t mb-3">Los cinco principios que sobreviven a cualquier fórmula</div>
+      <ol class="text-sm text-[#ccc] space-y-3 leading-relaxed list-decimal list-inside">
+        <li><span class="text-white font-semibold">Solo los flujos futuros y diferenciales importan.</span> El costo hundido nunca entra.</li>
+        <li><span class="text-white font-semibold">Nunca se comparan cantidades en instantes distintos</span> sin llevarlas a una base común.</li>
+        <li><span class="text-white font-semibold">Los cocientes (TIR, B/C) no ordenan alternativas excluyentes.</span> Solo el análisis incremental.</li>
+        <li><span class="text-white font-semibold">Consistencia de unidades:</span> pesos constantes con tasa real, corrientes con tasa de mercado; antes de impuestos con TREMA antes de impuestos.</li>
+        <li><span class="text-white font-semibold">Ninguna decisión se reporta sin su sensibilidad.</span> La TREMA, la inflación y las estimaciones de costo son supuestos, no datos.</li>
+      </ol>
+    </div>
+    <div class="card border-[#a78bfa]/40">
+      <div class="lbl accent-v mb-2">El hilo conductor de las cuatro sesiones</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Un mismo error las recorre: la <span class="text-white font-semibold">inconsistencia de bases</span>. Mezclar periodos (Sesión 1), vidas (Sesión 2), cocientes con magnitudes (Sesión 3) y monedas o bases fiscales (Sesión 4) son variantes del mismo fallo. Los ejercicios 1.5, 2.2, 3.3 y 4.6 cuantifican cuánto cuesta cada una.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Referencias</h2>
+    <ul class="text-xs text-[#888] space-y-3 leading-relaxed">
+      <li>Blank, L. y Tarquin, A. (2018). <em>Ingeniería económica</em> (8.ª ed.). McGraw-Hill. Caps. 11–13 reemplazo, 14 inflación, 15 estimación, 17 impuestos.</li>
+      <li>Sullivan, W., Wicks, E. y Koelling, C. P. (2019). <em>Ingeniería económica de DeGarmo</em> (17.ª ed.). Pearson. Caps. 3 estimación de costos, 7, 8 inflación, 9 reemplazo.</li>
+      <li>Park, C. S. (2019). <em>Contemporary Engineering Economics</em> (6.ª ed.). Pearson. Caps. 11 reemplazo, 12–13.</li>
+      <li>Eschenbach, T. (2010). <em>Engineering Economy: Applying Theory to Practice</em> (3.ª ed.). Oxford University Press. Caps. 12–13.</li>
+      <li>Peters, M., Timmerhaus, K. y West, R. (2003). <em>Plant Design and Economics for Chemical Engineers</em> (5.ª ed.). McGraw-Hill. Caps. 6–7: factores de costo capital, índices y regla de los seis décimos.</li>
+      <li>AACE International. <em>Recommended Practice 17R-97</em>: Cost Estimate Classification System; <em>18R-97</em>: aplicación a industrias de proceso.</li>
+      <li>Ley del Impuesto sobre la Renta (México), arts. 31–38 y 9.º: deducción de inversiones y tasa del ISR corporativo.</li>
+      <li>Baca Urbina, G. (2013). <em>Fundamentos de ingeniería económica</em> (5.ª ed.). McGraw-Hill.</li>
+    </ul>
+    <div class="card border-[#2dd4bf]/40 mt-7 text-center">
+      <p class="text-base text-[#ddd]">Fin del curso · 4 sesiones · 13 temas · 26 ejercicios · 21 laboratorios</p>
+    </div>
+  </div>
+</div>
+
+<!--SCRIPT-->
+// ===== LAB 16: vida económica de servicio =====
+let MV16=[1000000,750000,560000,420000,320000,250000];
+let AOC16=[250000,320000,410000,530000,680000,870000];
+function l16Set(a,k,v){(a==='mv'?MV16:AOC16)[k]=+v||0;lab16();}
+function lab16(){
+  const P=+document.getElementById('l16-p').value, i=+document.getElementById('l16-i').value/100;
+  document.getElementById('l16-i-val').innerText=(i*100).toFixed(1)+'%';
+  const N=MV16.length, filas=[];
+  for(let n=1;n<=N;n++){
+    const cr=-P*AP(i,n)+MV16[n-1]*AF(i,n);
+    let vpa=0;for(let t=1;t<=n;t++)vpa-=AOC16[t-1]*PF(i,t);
+    const va=vpa*AP(i,n);
+    filas.push({n,cr,va,tot:cr+va});
+  }
+  const best=filas.reduce((a,b)=>b.tot>a.tot?b:a);
+  document.getElementById('l16-ves').innerText=best.n+(best.n===1?' año':' años');
+  document.getElementById('l16-va').innerText=money(best.tot);
+  const vecinos=filas.filter(f=>Math.abs(f.n-best.n)===1);
+  const peor=vecinos.length?Math.min(...vecinos.map(f=>Math.abs(f.tot-best.tot))):0;
+  document.getElementById('l16-plano').innerText=vecinos.length?money(peor)+'  ('+(peor/Math.abs(best.tot)*100).toFixed(2)+'%)':'—';
+  document.getElementById('l16-tabla').innerHTML=
+    '<thead><tr><th>n</th><th>Valor de mercado</th><th>Costo de operación</th><th>CR(n)</th><th>VA_AOC(n)</th><th>VA total</th></tr></thead><tbody>'+
+    filas.map((f,k)=>`<tr class="${f.n===best.n?'hl':''}"><td>${f.n}</td>
+      <td><input type="number" value="${MV16[k]}" step="25000" style="text-align:right" oninput="l16Set('mv',${k},this.value)"></td>
+      <td><input type="number" value="${AOC16[k]}" step="25000" style="text-align:right" oninput="l16Set('aoc',${k},this.value)"></td>
+      <td>${money(f.cr)}</td><td>${money(f.va)}</td><td class="${f.n===best.n?'':'text-[#999]'}">${money(f.tot)}</td></tr>`).join('')+'</tbody>';
+  Plotly.react('l16-plot',[
+    {x:filas.map(f=>f.n),y:filas.map(f=>f.cr),name:'CR(n) · capital',type:'scatter',mode:'lines+markers',line:{color:'#2dd4bf',width:2.5},marker:{size:6}},
+    {x:filas.map(f=>f.n),y:filas.map(f=>f.va),name:'VA_AOC(n) · operación',type:'scatter',mode:'lines+markers',line:{color:'#fb7185',width:2.5},marker:{size:6}},
+    {x:filas.map(f=>f.n),y:filas.map(f=>f.tot),name:'VA total',type:'scatter',mode:'lines+markers',line:{color:'#fff',width:3},marker:{size:8}},
+    {x:[best.n],y:[best.tot],name:'VES',type:'scatter',mode:'markers',marker:{color:'#fbbf24',size:15,symbol:'diamond'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'años de retención n',font:{size:10}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'valor anual',font:{size:10}},tickformat:'$,.0s'}},PLC);
+  document.getElementById('l16-nota').innerHTML=
+    `<div class="lbl mb-2">Lectura</div>
+     <p class="text-[10px] text-[#888] leading-relaxed">CR sube (menos negativo) al repartir la inversión entre más años. VA_AOC baja porque el equipo envejece. La suma tiene forma de <span class="text-white">U</span> y su fondo es la VES.
+     ${peor/Math.abs(best.tot)<0.02?`<br><br><span class="accent-a">El mínimo es muy plano:</span> moverse un año cuesta solo ${(peor/Math.abs(best.tot)*100).toFixed(2)}%. Los errores de estimación en MV y AOC son mucho mayores. Reporte «VES de ${best.n-1} a ${best.n+1} años, óptimo en ${best.n}», nunca un año exacto.`:''}</p>`;
+}
+
+// ===== LAB 17: defensor vs retador =====
+const MVD=[420000,320000,250000], AOCD=[530000,680000,870000];
+function lab17(){
+  const g=id=>+document.getElementById(id).value;
+  const i=g('l17-i')/100, MV=g('l17-mv'), BV=g('l17-bv');
+  document.getElementById('l17-i-val').innerText=(i*100).toFixed(1)+'%';
+  const C={P:g('l17-pc'),n:Math.max(1,g('l17-nc')),A:g('l17-ac'),S:g('l17-sc')};
+  const crC=-C.P*AP(i,C.n)+C.S*AF(i,C.n), vaC=crC-C.A;
+  const fd=[];
+  for(let n=1;n<=MVD.length;n++){
+    const cr=-MV*AP(i,n)+MVD[n-1]*AF(i,n);
+    let vp=0;for(let t=1;t<=n;t++)vp-=AOCD[t-1]*PF(i,t);
+    fd.push({n,cr,va:vp*AP(i,n),tot:cr+vp*AP(i,n)});
+  }
+  const bestD=fd.reduce((a,b)=>b.tot>a.tot?b:a);
+  const reemp=vaC>bestD.tot;
+  document.getElementById('l17-t1').innerHTML=
+    '<thead><tr><th>n</th><th>CR</th><th>VA_AOC</th><th>VA defensor</th></tr></thead><tbody>'+
+    fd.map(f=>`<tr class="${f.n===bestD.n?'hl':''}"><td>${f.n}</td><td>${money0(f.cr)}</td><td>${money0(f.va)}</td><td>${money(f.tot)}</td></tr>`).join('')+'</tbody>';
+  const mcs=[];let prevMV=MV;
+  for(let k=0;k<MVD.length;k++){
+    const op=prevMV*i, perd=prevMV-MVD[k], aoc=AOCD[k];
+    mcs.push({t:k+1,op,perd,aoc,mc:op+perd+aoc});prevMV=MVD[k];
+  }
+  document.getElementById('l17-t2').innerHTML=
+    '<thead><tr><th>Año</th><th>Oportunidad</th><th>Pérdida valor</th><th>Operación</th><th>MC total</th></tr></thead><tbody>'+
+    mcs.map(m=>`<tr class="${m.mc>Math.abs(vaC)?'':'hl'}"><td>${m.t}</td><td>${money0(m.op)}</td><td>${money0(m.perd)}</td>
+      <td>${money0(m.aoc)}</td><td class="${m.mc>Math.abs(vaC)?'accent-r':'accent-t'}">${money(m.mc)}</td></tr>`).join('')+
+    `<tr style="border-top:2px solid #2a2a2a"><td colspan="4" style="text-align:left" class="text-[#888]">VA del retador (umbral)</td><td class="text-white">${money(Math.abs(vaC))}</td></tr></tbody>`;
+  document.getElementById('l17-res').innerHTML=`
+    <div><div class="lbl mb-1">VES del defensor</div><div class="font-mono text-lg text-white">${bestD.n} año${bestD.n===1?'':'s'}</div>
+      <div class="font-mono text-sm accent-t">${money(bestD.tot)}</div></div>
+    <div><div class="lbl mb-1">VA del retador · ${C.n} años</div><div class="font-mono text-base accent-r">${money(vaC)}</div>
+      <div class="text-[10px] text-[#777] mt-1">CR ${money0(crC)} · AOC ${money0(-C.A)}</div></div>
+    <div class="card !p-3" style="background:${reemp?'#1a0f0c':'#0d1512'};border-color:${reemp?'#fb718566':'#2dd4bf66'}">
+      <div class="lbl mb-1" style="color:${reemp?'#fb7185':'#2dd4bf'}">Decisión</div>
+      <div class="font-mono text-base text-white">${reemp?'REEMPLAZAR AHORA':'CONSERVAR'}</div>
+      <div class="text-[10px] text-[#999] mt-1">ventaja de ${money(Math.abs(vaC-bestD.tot))} anuales</div></div>`;
+  const ns=fd.map(f=>f.n);
+  Plotly.react('l17-plot',[
+    {x:ns,y:fd.map(f=>f.tot),name:'VA del defensor',type:'scatter',mode:'lines+markers',line:{color:'#2dd4bf',width:3},marker:{size:8}},
+    {x:ns,y:ns.map(()=>vaC),name:'VA del retador',type:'scatter',mode:'lines',line:{color:'#fb7185',width:2.5,dash:'dash'}},
+    {x:mcs.map(m=>m.t),y:mcs.map(m=>-m.mc),name:'Costo marginal de retener',type:'bar',marker:{color:'#a78bfa',opacity:.45}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'años adicionales de retención',font:{size:10}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'costo anual',font:{size:10}},tickformat:'$,.0s'}},PLC);
+  const hund=BV-MV, ahorro=hund*0.30;
+  document.getElementById('l17-hundido').innerHTML=
+    `<div class="lbl accent-v mb-2">El valor en libros y el costo hundido</div>
+     <p class="text-sm text-[#ccc] leading-relaxed">Valor en libros ${money0(BV)} contra valor de mercado ${money0(MV)}: un costo hundido de <span class="text-white font-mono">${money(hund)}</span>.
+     <span class="text-white font-semibold">Mueva el campo del valor en libros y observe: ningún número del análisis cambia.</span></p>
+     <p class="text-xs text-[#888] leading-relaxed mt-3"><span class="accent-r">El argumento que hay que rechazar:</span> «no podemos vender en ${money0(MV)} un activo que vale ${money0(BV)} en libros porque registraríamos una pérdida». Esa pérdida <span class="text-white">ya ocurrió</span>; registrarla solo la hace visible. Conservar el equipo para no reconocerla cuesta ${money0(Math.abs(vaC-bestD.tot))} reales cada año.</p>
+     <p class="text-xs text-[#888] leading-relaxed mt-3"><span class="accent-t">Matiz fiscal que sí importa:</span> la pérdida en la enajenación es deducible (LISR art. 31). Con ISR del 30% genera un ahorro de ${money(ahorro)}, que <span class="text-white">aumenta</span> el flujo de la venta del defensor. Es decir, el valor en libros <em>refuerza</em> la decisión de reemplazar, nunca la contradice.</p>`;
+}
+
+// ===== LAB 18: seis décimos + índice =====
+const RANGOS={5:[-.30,.50],4:[-.20,.30],3:[-.10,.20],2:[-.05,.15],1:[-.03,.10]};
+function lab18(){
+  const g=id=>+document.getElementById(id).value;
+  const Q1=g('l18-q1')||1,Q2=g('l18-q2'),C1=g('l18-c1'),x=g('l18-x'),I1=g('l18-i1')||1,I2=g('l18-i2');
+  document.getElementById('l18-x-val').innerText=x.toFixed(2);
+  const fq=Math.pow(Q2/Q1,x), fi=I2/I1;
+  const sinEsc=C1*fq, total=sinEsc*fi, lineal=C1*(Q2/Q1)*fi;
+  const cl=document.getElementById('l18-cl').value, R=RANGOS[cl];
+  const lo=total*(1+R[0]), hi=total*(1+R[1]);
+  document.getElementById('l18-res').innerHTML=`
+    <div><div class="lbl mb-1">Estimación final</div><div class="font-mono text-2xl text-white">${total.toFixed(2)} M</div></div>
+    <div><div class="lbl mb-1">Rango clase ${cl}</div><div class="font-mono text-sm accent-a">${lo.toFixed(2)} – ${hi.toFixed(2)} M</div></div>
+    <div><div class="lbl mb-1">Si se escalara linealmente</div><div class="font-mono text-base accent-r">${lineal.toFixed(2)} M</div>
+      <div class="text-[10px] text-[#777] mt-1">sobreestima ${((lineal/total-1)*100).toFixed(2)}% · ${(lineal-total).toFixed(1)} M</div></div>`;
+  document.getElementById('l18-pasos').innerHTML=
+    `<div class="lbl accent-t mb-3">Los dos ajustes, paso a paso</div>
+     <div class="grid md:grid-cols-3 gap-4">
+       <div><div class="text-[9px] text-[#666] mb-1">1 · RAZÓN DE CAPACIDADES</div>
+         <div class="font-mono text-sm text-[#ccc]">(${Q2.toLocaleString()} / ${Q1.toLocaleString()})<sup>${x.toFixed(2)}</sup></div>
+         <div class="font-mono text-lg accent-t mt-1">${fq.toFixed(6)}</div>
+         <div class="text-[10px] text-[#777] mt-1">capacidad +${((Q2/Q1-1)*100).toFixed(0)}% → costo +${((fq-1)*100).toFixed(1)}%</div></div>
+       <div><div class="text-[9px] text-[#666] mb-1">2 · RAZÓN DE ÍNDICES</div>
+         <div class="font-mono text-sm text-[#ccc]">${I2} / ${I1}</div>
+         <div class="font-mono text-lg accent-v mt-1">${fi.toFixed(6)}</div>
+         <div class="text-[10px] text-[#777] mt-1">inflación de costos +${((fi-1)*100).toFixed(1)}% acumulada</div></div>
+       <div><div class="text-[9px] text-[#666] mb-1">3 · ESTIMACIÓN INTEGRADA</div>
+         <div class="font-mono text-sm text-[#ccc]">${C1} × ${fq.toFixed(4)} × ${fi.toFixed(4)}</div>
+         <div class="font-mono text-lg text-white mt-1">${total.toFixed(2)} M</div>
+         <div class="text-[10px] text-[#777] mt-1">sin escalar en el tiempo: ${sinEsc.toFixed(2)} M</div></div>
+     </div>`;
+  const qs=[],cs=[],ls=[];
+  for(let q=Q1*0.4;q<=Q1*3;q+=Q1*0.05){qs.push(q);cs.push(C1*Math.pow(q/Q1,x)*fi);ls.push(C1*(q/Q1)*fi);}
+  Plotly.react('l18-plot',[
+    {x:qs,y:cs,name:`seis décimos (x = ${x.toFixed(2)})`,type:'scatter',mode:'lines',line:{color:'#2dd4bf',width:3}},
+    {x:qs,y:ls,name:'escalamiento lineal',type:'scatter',mode:'lines',line:{color:'#fb7185',width:2,dash:'dash'}},
+    {x:[Q2],y:[total],name:'estimación',type:'scatter',mode:'markers',marker:{color:'#fff',size:11,symbol:'diamond'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'capacidad',font:{size:9}}},
+     yaxis:{...PL.yaxis,title:{text:'costo (millones)',font:{size:9}}},
+     title:{text:'Economía de escala',font:{size:11,color:'#999'}},margin:{l:52,r:14,t:44,b:38}},PLC);
+  const clases=[5,4,3,2,1];
+  Plotly.react('l18-rango',[{
+    x:clases.map(c=>total*(RANGOS[c][1]-RANGOS[c][0])),
+    y:clases.map(c=>'Clase '+c),
+    base:clases.map(c=>total*(1+RANGOS[c][0])),
+    type:'bar',orientation:'h',
+    marker:{color:clases.map(c=>c==cl?'#2dd4bf':'#2a2a2a'),line:{color:'#444',width:1}},
+    hovertemplate:'%{y}<extra></extra>'
+  },{x:[total],y:['Clase '+cl],type:'scatter',mode:'markers',marker:{color:'#fff',size:10,symbol:'line-ns-open',line:{width:3,color:'#fff'}},name:'estimación puntual'}],
+   {...PL,showlegend:false,xaxis:{...PL.xaxis,title:{text:'millones',font:{size:9}}},yaxis:{...PL.yaxis},
+    title:{text:'Rango de exactitud por clase AACE',font:{size:11,color:'#999'}},margin:{l:62,r:14,t:44,b:38}},PLC);
+}
+
+// ===== LAB 19: curva de aprendizaje =====
+function lab19(){
+  const T1=+document.getElementById('l19-t1').value, s=+document.getElementById('l19-s').value/100,
+        n1=Math.max(1,+document.getElementById('l19-n1').value), n2=Math.max(n1+1,+document.getElementById('l19-n2').value),
+        ch=+document.getElementById('l19-ch').value;
+  document.getElementById('l19-s-val').innerText=(s*100).toFixed(0)+'%';
+  const b=Math.log(s)/Math.log(2), T=u=>T1*Math.pow(u,b);
+  let acc1=0;for(let u=1;u<=n1;u++)acc1+=T(u);
+  let acc2=0;for(let u=1;u<=n2;u++)acc2+=T(u);
+  const lote2=acc2-acc1, prom1=acc1/n1, prom2=lote2/(n2-n1);
+  document.getElementById('l19-b').innerText=b.toFixed(6);
+  document.getElementById('l19-h1').innerText=acc1.toFixed(2)+' h';
+  document.getElementById('l19-p1').innerText=prom1.toFixed(2)+' h/u';
+  document.getElementById('l19-h2').innerText=lote2.toFixed(2)+' h';
+  document.getElementById('l19-p2').innerText=prom2.toFixed(2)+' h/u';
+  document.getElementById('l19-cot').innerHTML=`
+    <div class="lbl mb-1">Precio por unidad del lote 2</div>
+    <div class="text-[9px] text-[#666]">CON T₁ (sobreestima)</div><div class="font-mono text-sm accent-r">${money(T1*ch)}</div>
+    <div class="text-[9px] text-[#666] mt-2">CON LA ÚLTIMA (subestima)</div><div class="font-mono text-sm accent-r">${money(T(n2)*ch)}</div>
+    <div class="text-[9px] text-[#666] mt-2">CON EL PROMEDIO (correcto)</div><div class="font-mono text-lg accent-t">${money(prom2*ch)}</div>`;
+  const us=[],ts=[],pa=[];let a=0;
+  for(let u=1;u<=n2;u++){a+=T(u);us.push(u);ts.push(T(u));pa.push(a/u);}
+  Plotly.react('l19-plot',[
+    {x:us,y:ts,name:'Tiempo de la unidad u',type:'scatter',mode:'lines',line:{color:'#2dd4bf',width:3}},
+    {x:us,y:pa,name:'Promedio acumulado',type:'scatter',mode:'lines',line:{color:'#a78bfa',width:2.5,dash:'dash'}},
+    {x:[1,2,4,8,16,32,64].filter(u=>u<=n2),y:[1,2,4,8,16,32,64].filter(u=>u<=n2).map(T),
+     name:'duplicaciones',type:'scatter',mode:'markers',marker:{color:'#fbbf24',size:9}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'unidad acumulada',font:{size:10}}},
+     yaxis:{...PL.yaxis,title:{text:'horas',font:{size:10}}}},PLC);
+  const dobles=[1,2,4,8,16,32,64].filter(u=>u<=Math.max(n2,16));
+  document.getElementById('l19-tabla').innerHTML=
+    '<thead><tr><th>Unidad</th><th>Horas Tᵤ</th><th>Verificación</th></tr></thead><tbody>'+
+    dobles.map((u,k)=>`<tr><td>${u}</td><td>${T(u).toFixed(4)}</td>
+      <td class="text-[#666] text-[10px]">${k===0?'—':`${(s*100).toFixed(0)}% × ${T(dobles[k-1]).toFixed(2)} ✓`}</td></tr>`).join('')+'</tbody>';
+  document.getElementById('l19-nota').innerHTML=
+    `<div class="lbl accent-a mb-2">Advertencias para cotizar</div>
+     <ul class="text-[11px] text-[#999] space-y-2 leading-relaxed">
+       <li>· Es un <span class="text-white">piso</span>: falta material, indirectos, margen y contingencia.</li>
+       <li>· Supone <span class="text-white">continuidad</span>. Una interrupción larga provoca olvido organizacional y la curva retrocede.</li>
+       <li>· Supone que <span class="text-white">el diseño no cambia</span>. Toda modificación de ingeniería reinicia parte del aprendizaje.</li>
+       <li>· La curva eventualmente se <span class="text-white">aplana</span>: hay un mínimo tecnológico. El modelo de potencia pura predice T → 0, que es físicamente falso.</li>
+     </ul>
+     <p class="text-[11px] text-[#888] leading-relaxed mt-3"><span class="accent-t">Poder de negociación:</span> producir ${n2-n1} unidades más cuesta solo ${((lote2/acc1-1)*100).toFixed(1)}% más horas que las primeras ${n1}. Saber dónde está la empresa en su curva vale dinero en la mesa.</p>`;
+}
+
+// ===== LAB 20: inflación =====
+function lab20(){
+  const iF=+document.getElementById('l20-if').value/100, f=+document.getElementById('l20-f').value/100,
+        A=+document.getElementById('l20-a').value, n=+document.getElementById('l20-n').value;
+  document.getElementById('l20-if-val').innerText=(iF*100).toFixed(1)+'%';
+  document.getElementById('l20-f-val').innerText=(f*100).toFixed(1)+'%';
+  document.getElementById('l20-n-val').innerText=n;
+  const ir=(1+iF)/(1+f)-1;
+  document.getElementById('l20-ir').innerText=pct(ir);
+  document.getElementById('l20-ver').innerText=f5(ir+f+ir*f)+' = '+f5(iF)+' ✓';
+  document.getElementById('l20-cruz').innerText=(ir*f*100).toFixed(4)+' puntos';
+  const vA=A*PA(ir,n);
+  let vB=0;const filas=[];
+  for(let t=1;t<=n;t++){const corr=A*Math.pow(1+f,t), vp=corr*PF(iF,t);vB+=vp;
+    filas.push({t,corr,fd:PF(iF,t),vp});}
+  const vErr=A*PA(iF,n);
+  document.getElementById('l20-va').innerText=money(vA);
+  document.getElementById('l20-vb').innerText=money(vB);
+  document.getElementById('l20-dif').innerText=money(Math.abs(vA-vB))+(Math.abs(vA-vB)<0.02?'  ✓ idénticas':'');
+  document.getElementById('l20-err').innerText=money(vA-vErr)+'  ('+((vErr/vA-1)*100).toFixed(2)+'%)';
+  document.getElementById('l20-tabla').innerHTML=
+    '<thead><tr><th>t</th><th>Pago en pesos de hoy</th><th>(1+f)ᵗ</th><th>Pago corriente</th><th>(1+i_f)⁻ᵗ</th><th>Valor presente</th></tr></thead><tbody>'+
+    filas.map(r=>`<tr><td>${r.t}</td><td>${money0(A)}</td><td>${Math.pow(1+f,r.t).toFixed(6)}</td>
+      <td>${money(r.corr)}</td><td>${r.fd.toFixed(6)}</td><td>${money(r.vp)}</td></tr>`).join('')+
+    `<tr style="border-top:2px solid #2a2a2a"><td class="text-white">Σ</td><td colspan="4"></td><td class="accent-t">${money(vB)}</td></tr></tbody>`;
+  Plotly.react('l20-plot',[
+    {x:filas.map(r=>r.t),y:filas.map(()=>A),name:'Pesos constantes',type:'bar',marker:{color:'#2dd4bf',opacity:.6}},
+    {x:filas.map(r=>r.t),y:filas.map(r=>r.corr),name:'Pesos corrientes',type:'bar',marker:{color:'#fbbf24',opacity:.75}},
+    {x:filas.map(r=>r.t),y:filas.map(r=>r.vp),name:'Valor presente',type:'scatter',mode:'lines+markers',line:{color:'#a78bfa',width:3},marker:{size:6}}
+  ],{...PL,barmode:'group',xaxis:{...PL.xaxis,title:{text:'año',font:{size:10}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'pesos',font:{size:10}},tickformat:'$,.0s'}},PLC);
+  document.getElementById('l20-nota').innerHTML=
+    `<div class="lbl accent-t mb-2">Por qué las dos rutas coinciden exactamente</div>
+     <p class="text-sm text-[#ccc] leading-relaxed">Cada pago se multiplica por (1+f)ᵗ para inflarlo y se divide entre (1+i_f)ᵗ para descontarlo. El factor neto es exactamente (1+i)⁻ᵗ, el descuento a la tasa real. <span class="text-white">Son la misma operación escrita de dos maneras.</span></p>
+     <p class="text-xs text-[#888] leading-relaxed mt-3"><span class="accent-v">Cuál usar:</span> la ruta de pesos constantes es más simple cuando todo se infla igual. La de pesos corrientes es <span class="text-white">obligatoria</span> cuando hay inflaciones distintas por rubro (energía 8%, salarios 6%, contratos fijos 0%) o cuando hay depreciación, porque la depreciación fiscal se calcula sobre el monto histórico y <span class="text-white">no se infla</span>.</p>
+     <p class="text-xs text-[#888] leading-relaxed mt-3"><span class="accent-r">El error de mezclar:</span> descontar pesos constantes a la tasa de mercado aplica doble castigo por inflación y subestima en ${((1-vErr/vA)*100).toFixed(2)}%. En un proyecto de costos hace parecer barato lo que no lo es; en uno de ingresos, lleva a rechazar proyectos rentables. <span class="text-white">El sesgo crece con n.</span></p>`;
+}
+
+// ===== LAB 21: ATCF integrador =====
+function lab21(){
+  const g=id=>+document.getElementById(id).value;
+  const B=g('l21-b'), R=g('l21-r'), E=g('l21-e'), S=g('l21-s'), T=g('l21-t')/100, i=g('l21-i')/100;
+  document.getElementById('l21-t-val').innerText=(T*100).toFixed(0)+'%';
+  document.getElementById('l21-i-val').innerText=(i*100).toFixed(1)+'%';
+  const re=R-E, atcf=[-B], filas=[];
+  let bv=B;
+  for(let t=1;t<=6;t++){
+    const d=B*MACRS5_21[t-1]; bv-=d;
+    const uai=re-d, isr=uai*T, fe=re-isr;
+    atcf.push(fe); filas.push({t,re,d,uai,isr,fe,bv});
+  }
+  const bv6=Math.max(0,bv), res=S-bv6, impV=res*T, netoV=S-impV;
+  atcf[6]+=netoV;
+  const vp=npv(i,atcf), tirD=irr(atcf);
+  const bt=[-B,...Array(5).fill(re),re+S];
+  const tirA=irr(bt);
+  document.getElementById('l21-vp').innerText=money(vp);
+  document.getElementById('l21-vp').style.color=vp>=0?'#fff':'#fb7185';
+  document.getElementById('l21-tird').innerText=tirD!==null?pct(tirD):'—';
+  document.getElementById('l21-tira').innerText=tirA!==null?pct(tirA):'—';
+  document.getElementById('l21-regla').innerText=tirA!==null?pct(tirA*(1-T),2)+'  (aproximación)':'—';
+  document.getElementById('l21-venta').innerText=money(netoV);
+  document.getElementById('l21-tabla').innerHTML=
+    '<thead><tr><th>t</th><th>R − E</th><th>Depreciación dₜ</th><th>UAI</th><th>ISR</th><th>ATCF</th><th>VP del ATCF</th></tr></thead><tbody>'+
+    `<tr><td class="accent-t">0</td><td colspan="4" style="text-align:left" class="text-[#666]">inversión inicial</td><td>${money(-B)}</td><td>${money(-B)}</td></tr>`+
+    filas.map(f=>{const extra=f.t===6?netoV:0;
+      return `<tr${f.t===2?' class="hl"':''}><td class="accent-t">${f.t}</td><td>${money0(f.re)}</td><td>${money0(f.d)}</td>
+      <td>${money0(f.uai)}</td><td>${money0(f.isr)}</td><td>${money(f.fe+extra)}</td><td>${money((f.fe+extra)*PF(i,f.t))}</td></tr>`;}).join('')+
+    `<tr style="border-top:2px solid #2a2a2a"><td colspan="5" style="text-align:left" class="text-[#888]">Venta en t6: precio ${money0(S)} − ISR ${money0(impV)} = ${money0(netoV)} neto (BV₆ = ${money0(bv6)})</td>
+      <td class="text-white">VP</td><td class="text-white">${money(vp)}</td></tr></tbody>`;
+  const brecha=(tirA!==null&&tirD!==null)?(tirA-tirD)*100:0;
+  const aprox=(tirA!==null)?tirA*(1-T):0;
+  document.getElementById('l21-ver').innerHTML=
+    `<div class="lbl mb-2">Consistencia de bases</div>
+     <p class="text-[10px] text-[#888] leading-relaxed">La TIR antes de impuestos supera a la de después en <span class="text-white font-mono">${brecha.toFixed(2)} puntos</span>. Evaluarla contra una TREMA <em>después</em> de impuestos compara magnitudes incompatibles.
+     <br><br><span class="accent-a">La regla práctica TIR(1−T) = ${pct(aprox,2)}</span> queda ${(((tirD||0)-aprox)*100).toFixed(2)} puntos por debajo del valor real. La diferencia es precisamente el <span class="text-white">escudo fiscal de la depreciación</span>, que la aproximación ignora.</p>`;
+  Plotly.react('l21-plot',[
+    {x:[0,1,2,3,4,5,6],y:atcf,name:'ATCF',type:'bar',marker:{color:atcf.map(v=>v>=0?'#2dd4bf':'#fb7185')}},
+    {x:[1,2,3,4,5,6],y:filas.map(f=>f.d*T),name:'Escudo fiscal dₜ × T',type:'scatter',mode:'lines+markers',
+     line:{color:'#fbbf24',width:2.5},marker:{size:7}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'año',font:{size:10}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'pesos',font:{size:10}},tickformat:'$,.0s'}},PLC);
+}
+const MACRS5_21=[.20,.32,.192,.1152,.1152,.0576];
+
+// ===== init =====
+function onSlideChange(k){
+  const m={4:['l16-plot'],5:['l17-plot'],7:['l18-plot','l18-rango'],9:['l19-plot'],11:['l20-plot'],13:['l21-plot']};
+  if(m[k])setTimeout(()=>m[k].forEach(id=>{try{Plotly.Plots.resize(id);}catch(e){}}),120);
+}
+window.addEventListener('load',()=>{initNav();lab16();lab17();lab18();lab19();lab20();lab21();});

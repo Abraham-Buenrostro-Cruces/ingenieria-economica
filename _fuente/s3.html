@@ -1,0 +1,725 @@
+<!--TITLE:Sesión 3 · Tasas de rendimiento, depreciación y relación B/C-->
+<div class="slide active">
+  <div class="slide-content text-center">
+    <div class="badge mb-6">Sesión 3 de 4</div>
+    <h1 class="text-[4.6rem] leading-none font-black tracking-widest mb-3 neon-glow">TIR · B/C</h1>
+    <h3 class="text-xl font-light text-[#777] tracking-[.25em] mb-10 uppercase">Rendimiento, depreciación y sector público</h3>
+    <div class="w-16 h-1 bg-[#2dd4bf] mx-auto mb-10"></div>
+    <p class="text-lg font-semibold text-white mb-1">Ingeniería Económica</p>
+    <p class="text-xs font-medium text-[#666] uppercase tracking-[.2em] leading-relaxed">
+      Temas 8 – 11 &nbsp;·&nbsp; 4 horas<br>Tasas de rendimiento · Modelos de depreciación · Beneficio/Costo
+    </p>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Cambio de perspectiva</h2>
+    <div class="card border-[#a78bfa]/40 mb-7">
+      <p class="text-base text-[#ddd] leading-relaxed">Hasta ahora fijábamos <span class="font-mono text-white">i</span> y medíamos el valor. Ahora fijamos el valor en cero y despejamos <span class="font-mono text-white">i</span>. Parece un cambio trivial; no lo es.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-3">
+      <div class="card !p-4"><div class="lbl accent-t mb-1">Bloque A · 55 min</div><p class="text-xs text-[#999] leading-relaxed">TIR, saldo no recuperado, patologías<br><span class="text-[#666]">Ej. 3.1 · 3.2</span></p></div>
+      <div class="card !p-4"><div class="lbl accent-v mb-1">Bloque B · 50 min</div><p class="text-xs text-[#999] leading-relaxed">Análisis incremental<br><span class="text-[#666]">Ej. 3.3</span></p></div>
+      <div class="card !p-4"><div class="lbl accent-r mb-1">Bloque C · 75 min</div><p class="text-xs text-[#999] leading-relaxed">Depreciación, MACRS, LISR<br><span class="text-[#666]">Ej. 3.4 · 3.5</span></p></div>
+      <div class="card !p-4"><div class="lbl accent-a mb-1">Bloque D · 60 min</div><p class="text-xs text-[#999] leading-relaxed">Beneficio/Costo<br><span class="text-[#666]">Ej. 3.6 · 3.7</span></p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Definición correcta de la TIR</h2>
+    <div class="card border-[#2dd4bf]/40 mb-5">
+      <p class="text-base text-[#ddd] leading-relaxed">La TIR <span class="font-mono">i*</span> es la tasa a la cual el <span class="text-white font-semibold">saldo no recuperado</span> de la inversión queda exactamente en cero al final del horizonte.</p>
+    </div>
+    <div class="text-center my-6">$$VP(i^{*}) = \sum_{t=0}^{n}\frac{FE_t}{(1+i^{*})^{t}}=0 \qquad\qquad S_t = S_{t-1}(1+i^{*}) + FE_t$$</div>
+    <div class="card border-[#fb7185]/40 mb-5">
+      <div class="lbl accent-r mb-2">La definición que circula y es falsa</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">«La TIR es el rendimiento de la inversión». <span class="text-white font-semibold">No.</span> La TIR es el rendimiento sobre el <span class="text-white">saldo aún no recuperado</span>, no sobre la inversión inicial ni sobre el capital total.</p>
+    </div>
+    <div class="card">
+      <p class="text-sm text-[#ccc] leading-relaxed">Si un proyecto de $2,800,000 tiene TIR de 17.62%, <em>no</em> significa que se ganen $493,360 cada año. Significa que el saldo <em>pendiente de recuperar</em> rinde 17.62%, y ese saldo <span class="text-white">decrece</span> cada periodo. La TIR no dice nada sobre el dinero <em>ya</em> recuperado: ese es el supuesto de reinversión, y es la raíz de todos los problemas del método.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[27%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 11</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">TIR Y</span><br><span class="font-bold text-white text-2xl">SALDO NO RECUPERADO</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicios 3.1 y 3.2. Cambie de preset y vea qué ocurre cuando el flujo deja de ser convencional.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="flex gap-2">
+          <button onclick="l11Preset('e31')" class="flex-1 text-[9px] font-mono uppercase border border-[#333] text-[#999] py-2 rounded hover:border-[#2dd4bf] hover:text-[#2dd4bf] transition">Ej 3.1</button>
+          <button onclick="l11Preset('e32')" class="flex-1 text-[9px] font-mono uppercase border border-[#333] text-[#999] py-2 rounded hover:border-[#fb7185] hover:text-[#fb7185] transition">Ej 3.2 mina</button>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>TREMA</span><span id="l11-i-val" class="font-mono accent-t">15.0%</span></div>
+          <input type="range" id="l11-i" min="1" max="60" step="0.5" value="15" oninput="lab11()">
+        </div>
+        <div class="flex gap-2">
+          <button onclick="l11Row(1)" class="flex-1 text-[9px] font-mono uppercase border border-[#333] text-[#999] py-2 rounded hover:border-[#a78bfa] hover:text-[#a78bfa] transition">+ Año</button>
+          <button onclick="l11Row(-1)" class="flex-1 text-[9px] font-mono uppercase border border-[#333] text-[#999] py-2 rounded hover:border-[#a78bfa] hover:text-[#a78bfa] transition">− Año</button>
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">TIR</div><div id="l11-tir" class="font-mono text-lg accent-v">—</div></div>
+        <div><div class="lbl mb-1">VP a la TREMA</div><div id="l11-vp" class="font-mono text-base text-white">—</div></div>
+        <div><div class="lbl mb-1">Descartes · cambios de signo</div><div id="l11-desc" class="font-mono text-sm text-[#bbb]">—</div></div>
+        <div><div class="lbl mb-1">Norstrom · acumulados</div><div id="l11-nors" class="font-mono text-sm text-[#bbb]">—</div></div>
+        <div><div class="lbl mb-1">TIR modificada (TIRM)</div><div id="l11-tirm" class="font-mono text-base accent-a">—</div></div>
+      </div>
+      <div id="l11-diag" class="border-t border-[#1f1f1f] pt-4 text-[10px] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-5 flex flex-col gap-3 overflow-hidden">
+      <div id="l11-plot" style="height:42%"></div>
+      <div class="flex-1 overflow-y-auto">
+        <p class="text-[10px] text-[#666] mb-2 font-mono">TABLA DE SALDO NO RECUPERADO A LA TIR — la definición operativa del método</p>
+        <table class="dt" id="l11-tabla"></table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Cuándo la TIR es única: dos pruebas</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="card border-[#2dd4bf]/40">
+        <div class="lbl accent-t mb-2">1 · Regla de los signos de Descartes</div>
+        <p class="text-[10px] text-[#666] uppercase tracking-wider mb-2">condición necesaria</p>
+        <p class="text-sm text-[#ccc] leading-relaxed">El número de raíces reales positivas no excede el número de <span class="text-white">cambios de signo</span> en la secuencia FE₀, FE₁, …, FEₙ.</p>
+      </div>
+      <div class="card border-[#a78bfa]/40">
+        <div class="lbl accent-v mb-2">2 · Criterio de Norstrom</div>
+        <p class="text-[10px] text-[#666] uppercase tracking-wider mb-2">condición suficiente</p>
+        <p class="text-sm text-[#ccc] leading-relaxed">Sea Sₖ la serie de <span class="text-white">flujos acumulados</span>. Si S₀ &lt; 0 y la serie cambia de signo <span class="text-white">exactamente una vez</span>, existe una única raíz positiva.</p>
+      </div>
+    </div>
+    <p class="text-xs text-[#888] leading-relaxed mb-6">Descartes acota, Norstrom garantiza. Un flujo convencional (−, +, +, …, +) pasa ambas trivialmente. Flujos no convencionales típicos: minería y petróleo con costos de cierre, proyectos con reinversiones intermedias grandes, contratos con pagos escalonados.</p>
+    <h3 class="text-sm font-bold text-white uppercase tracking-[.15em] mb-3">Qué hacer cuando la TIR no es única</h3>
+    <div class="grid md:grid-cols-3 gap-4 mb-5">
+      <div class="card"><div class="font-mono accent-t text-xl mb-2">01</div><p class="text-xs text-[#999] leading-relaxed"><span class="text-white">Usar VP o VA.</span> Siempre están bien definidos. Es la respuesta correcta en el 90% de los casos.</p></div>
+      <div class="card"><div class="font-mono accent-v text-xl mb-2">02</div><p class="text-xs text-[#999] leading-relaxed"><span class="text-white">TIR modificada.</span> Elimina la ambigüedad imponiendo tasas explícitas de reinversión y financiamiento.</p></div>
+      <div class="card"><div class="font-mono accent-r text-xl mb-2">03</div><p class="text-xs text-[#999] leading-relaxed"><span class="text-white">ROIC.</span> Se aplica la TREMA a los saldos positivos y se despeja i′ para los negativos.</p></div>
+    </div>
+    <div class="card border-[#fb7185]/40">
+      <div class="lbl accent-r mb-2">Lo importante</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Las múltiples TIR no son un defecto del proyecto: son un defecto de la <span class="text-white font-semibold">pregunta</span>. Un flujo no convencional no tiene «un» rendimiento porque alterna entre ser inversión y ser financiamiento.</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Por qué la TIR no ordena alternativas</h2>
+    <div class="card border-[#fb7185]/40 mb-6">
+      <p class="text-base text-[#ddd] leading-relaxed">La TIR es una medida de <span class="text-white font-semibold">eficiencia relativa</span> (% sobre el capital comprometido). El VP es una medida de <span class="text-white font-semibold">magnitud absoluta</span> de valor creado. Maximizar una no maximiza la otra.</p>
+      <p class="text-sm text-[#999] leading-relaxed mt-3">Un proyecto de $100 que rinde 50% genera $50. Uno de $10,000 que rinde 20% genera $2,000. La TIR prefiere el primero; el accionista prefiere el segundo.</p>
+    </div>
+    <h3 class="text-sm font-bold text-white uppercase tracking-[.15em] mb-3">Procedimiento del análisis incremental</h3>
+    <ol class="text-sm text-[#ccc] space-y-2 leading-relaxed list-decimal list-inside mb-6">
+      <li>Ordenar las alternativas por <span class="text-white">inversión inicial creciente</span>.</li>
+      <li>Descartar las que no alcanzan la TREMA por sí solas, si son de ingreso.</li>
+      <li>Tomar la de menor inversión como <span class="text-white">defensora</span>.</li>
+      <li>Calcular el flujo incremental Δ = retadora − defensora y su TIR<sub>Δ</sub>.</li>
+      <li>Si TIR<sub>Δ</sub> ≥ TREMA, la retadora pasa a ser defensora. Si no, se descarta.</li>
+      <li>Repetir. La última defensora en pie es la elegida.</li>
+    </ol>
+    <div class="card border-[#2dd4bf]/40">
+      <div class="lbl accent-t mb-2">Equivalencias que deben cumplirse</div>
+      <p class="text-sm text-[#ccc] leading-relaxed mb-2">TIR<sub>Δ</sub> ≥ TREMA ⟺ VP<sub>Δ</sub> ≥ 0 ⟺ VP<sub>retadora</sub> ≥ VP<sub>defensora</sub></p>
+      <p class="text-sm text-[#ccc] leading-relaxed">Y además: <span class="text-white font-semibold">TIR<sub>Δ</sub> es la tasa de cruce</span> de la Sesión 2. Mismo concepto, otro nombre.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 12</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">ANÁLISIS</span><br><span class="font-bold text-white text-2xl">INCREMENTAL</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 3.3. El orden por TIR individual y el orden por VP son <span class="accent-r">exactamente inversos</span>. Compruebe cuál es el correcto.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>TREMA</span><span id="l12-i-val" class="font-mono accent-t">12.0%</span></div>
+          <input type="range" id="l12-i" min="2" max="25" step="0.25" value="12" oninput="lab12()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Vida n</span><span id="l12-n-val" class="font-mono accent-v">8</span></div>
+          <input type="range" id="l12-n" min="3" max="20" step="1" value="8" oninput="lab12()">
+        </div>
+      </div>
+      <div id="l12-inputs" class="space-y-3 border-t border-[#1f1f1f] pt-4"></div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Elegida por TIR individual</div><div id="l12-gtir" class="font-mono text-base text-[#fb7185]">—</div></div>
+        <div><div class="lbl mb-1">Elegida por VP · correcta</div><div id="l12-gvp" class="font-mono text-lg text-[#2dd4bf]">—</div></div>
+        <div><div class="lbl mb-1">Valor que se perdería</div><div id="l12-perd" class="font-mono text-base text-white">—</div></div>
+      </div>
+      <div id="l12-nota" class="border-t border-[#1f1f1f] pt-4 text-[10px] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Alternativas individuales</h3>
+      <table class="dt mb-6" id="l12-t1"></table>
+      <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Análisis incremental · por inversión creciente</h3>
+      <table class="dt mb-5" id="l12-t2"></table>
+      <div id="l12-plot" style="height:260px"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Modelos de depreciación</h2>
+    <div class="card border-[#fb7185]/40 mb-6">
+      <div class="lbl accent-r mb-2">La depreciación no es un flujo de efectivo</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Nadie paga depreciación. Entra al análisis <span class="text-white font-semibold">únicamente</span> por su efecto fiscal: ahorro = d<sub>t</sub> × T. Acelerarla <span class="text-white">no cambia el impuesto total</span>, solo lo adelanta: es una ganancia de valor presente, no de dinero.</p>
+    </div>
+    <table class="dt mb-5">
+      <thead><tr><th style="text-align:left">Modelo</th><th style="text-align:left">Cargo anual</th><th style="text-align:left">Característica</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left" class="accent-t">Línea recta (LR)</td><td style="text-align:left">\(d_t=\frac{B-S}{n}\)</td><td style="text-align:left">Constante. Base fiscal en México.</td></tr>
+        <tr><td style="text-align:left" class="accent-v">Saldo decreciente (SD)</td><td style="text-align:left">\(d_t = \alpha\, BV_{t-1}\)</td><td style="text-align:left">Nunca llega a cero. Respeta S como piso.</td></tr>
+        <tr><td style="text-align:left" class="accent-v">Doble saldo decreciente</td><td style="text-align:left">\(\alpha = 2/n\)</td><td style="text-align:left">Caso particular de SD, el más acelerado.</td></tr>
+        <tr><td style="text-align:left" class="accent-r">Suma de dígitos (SDA)</td><td style="text-align:left">\(d_t=\frac{n-t+1}{n(n+1)/2}(B-S)\)</td><td style="text-align:left">Acelerado, converge exactamente a S.</td></tr>
+      </tbody>
+    </table>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="card"><div class="lbl accent-a mb-2">Regla del piso</div>
+        <p class="text-xs text-[#999] leading-relaxed">Bajo SD/DSD nunca se deprecia por debajo de S: <span class="font-mono text-white">dₜ = mín{α·BVₜ₋₁, BVₜ₋₁ − S}</span>. La ley no permite deducir una pérdida que no ha ocurrido.</p></div>
+      <div class="card"><div class="lbl accent-a mb-2">Cambio de DSD a línea recta</div>
+        <p class="text-xs text-[#999] leading-relaxed">Cada año se compara <span class="font-mono">2/n·BVₜ₋₁</span> contra <span class="font-mono">(BVₜ₋₁−S)/(n−t+1)</span> y se aplica el mayor. Con S = 0 el cambio siempre ocurre. Este mecanismo ya está <span class="text-white">incorporado</span> en las tasas de MACRS.</p></div>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 13</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">COMPARADOR</span><br><span class="font-bold text-white text-2xl">DEPRECIACIÓN</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 3.4. Baje el salvamento a cero y observe en qué año DSD cede el paso a línea recta.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="text-[9px] text-[#666] mb-1">Base depreciable B</div><input type="number" id="l13-b" value="3600000" step="100000" oninput="lab13()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Salvamento S</span><span id="l13-s-val" class="font-mono accent-r">$400,000</span></div>
+          <input type="range" id="l13-s" min="0" max="1500000" step="50000" value="400000" oninput="lab13()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Vida depreciable n</span><span id="l13-n-val" class="font-mono accent-v">8</span></div>
+          <input type="range" id="l13-n" min="3" max="20" step="1" value="8" oninput="lab13()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa de ISR</span><span id="l13-t-val" class="font-mono accent-a">30%</span></div>
+          <input type="range" id="l13-t" min="0" max="50" step="1" value="30" oninput="lab13()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>TREMA</span><span id="l13-i-val" class="font-mono accent-t">10.0%</span></div>
+          <input type="range" id="l13-i" min="0" max="25" step="0.5" value="10" oninput="lab13()">
+        </div>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="lbl">VP del escudo fiscal</div>
+        <div><div class="text-[9px] text-[#666]">LÍNEA RECTA</div><div id="l13-vlr" class="font-mono text-base accent-t">—</div></div>
+        <div><div class="text-[9px] text-[#666]">SUMA DE DÍGITOS</div><div id="l13-vsda" class="font-mono text-base accent-r">—</div></div>
+        <div><div class="text-[9px] text-[#666]">VENTAJA DE ACELERAR</div><div id="l13-vdif" class="font-mono text-lg text-white">—</div></div>
+        <div><div class="text-[9px] text-[#666]">AÑO DEL CAMBIO DSD → LR</div><div id="l13-camb" class="font-mono text-base accent-v">—</div></div>
+      </div>
+      <div class="border-t border-[#1f1f1f] pt-4">
+        <p class="text-[10px] text-[#777] leading-relaxed"><span class="accent-a">Punto crítico:</span> el impuesto total pagado es <span class="text-white">idéntico</span> bajo los dos métodos. Lo único que cambia es <em>cuándo</em>. Ponga la TREMA en 0% y las dos cifras se igualan.</p>
+      </div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div class="grid md:grid-cols-2 gap-5 mb-5">
+        <div id="l13-pd" style="height:250px"></div>
+        <div id="l13-pbv" style="height:250px"></div>
+      </div>
+      <table class="dt" id="l13-tabla"></table>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">MACRS y el contexto mexicano</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="card border-[#2dd4bf]/40">
+        <div class="lbl accent-t mb-3">MACRS · Estados Unidos</div>
+        <ul class="text-xs text-[#999] space-y-2 leading-relaxed">
+          <li>· Tasas tabuladas rₜ; <span class="font-mono text-white">dₜ = B · rₜ</span>.</li>
+          <li>· Siempre S = 0 para efectos fiscales.</li>
+          <li>· Convención de medio año: n + 1 años de cargos.</li>
+          <li>· GDS 5 años: <span class="font-mono text-white">20, 32, 19.20, 11.52, 11.52, 5.76%</span></li>
+        </ul>
+      </div>
+      <div class="card border-[#fb7185]/40">
+        <div class="lbl accent-r mb-3">LISR · México, arts. 31–34</div>
+        <ul class="text-xs text-[#999] space-y-2 leading-relaxed">
+          <li>· <span class="text-white">Solo línea recta</span>, sobre el Monto Original de la Inversión.</li>
+          <li>· Tasas <em>máximas</em>: construcciones 5%, maquinaria general 10%, automóviles 25%, computadoras 30%.</li>
+          <li>· No se considera valor de salvamento.</li>
+          <li>· Actualización por INPC del saldo pendiente.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card border-[#a78bfa]/40">
+      <div class="lbl accent-v mb-2">Consecuencia práctica</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Un mismo activo genera perfiles de ahorro fiscal <span class="text-white font-semibold">muy distintos</span> en ambos regímenes, y por lo tanto distinto VP después de impuestos. El modelo de depreciación es una variable del análisis, no un dato contable.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 14</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">VENTA ANTICIPADA</span><br><span class="font-bold text-white text-2xl">MACRS vs LISR</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicio 3.5. El mismo activo, el mismo precio de venta y la misma tasa de ISR producen <span class="accent-r">ganancia gravable en un régimen y pérdida deducible en el otro</span>.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="text-[9px] text-[#666] mb-1">Costo del equipo B</div><input type="number" id="l14-b" value="2500000" step="100000" oninput="lab14()"></div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Año de la venta</span><span id="l14-ty-val" class="font-mono accent-v">4</span></div>
+          <input type="range" id="l14-ty" min="1" max="6" step="1" value="4" oninput="lab14()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Precio de venta</span><span id="l14-pv-val" class="font-mono accent-t">$900,000</span></div>
+          <input type="range" id="l14-pv" min="0" max="2500000" step="50000" value="900000" oninput="lab14()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa de ISR</span><span id="l14-t-val" class="font-mono accent-a">30%</span></div>
+          <input type="range" id="l14-t" min="0" max="50" step="1" value="30" oninput="lab14()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa LISR línea recta</span><span id="l14-lr-val" class="font-mono accent-r">10%</span></div>
+          <input type="range" id="l14-lr" min="5" max="30" step="5" value="10" oninput="lab14()">
+        </div>
+      </div>
+      <div id="l14-res" class="space-y-3 border-t border-[#1f1f1f] pt-4"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <div id="l14-plot" style="height:270px" class="mb-5"></div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div><h3 class="text-xs font-bold accent-t uppercase tracking-[.15em] mb-2">MACRS GDS 5 años</h3><table class="dt" id="l14-t1"></table></div>
+        <div><h3 class="text-xs font-bold accent-r uppercase tracking-[.15em] mb-2">LISR línea recta</h3><table class="dt" id="l14-t2"></table></div>
+      </div>
+      <div id="l14-comp" class="card mt-5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-5">Relación beneficio/costo</h2>
+    <table class="dt mb-6">
+      <thead><tr><th style="text-align:left"></th><th style="text-align:left">Sector privado</th><th style="text-align:left">Sector público</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left">Objetivo</td><td style="text-align:left">Maximizar valor del accionista</td><td style="text-align:left">Maximizar bienestar social</td></tr>
+        <tr><td style="text-align:left">Horizonte</td><td style="text-align:left">5–15 años</td><td style="text-align:left">25–50 años o perpetuo</td></tr>
+        <tr><td style="text-align:left">Tasa de descuento</td><td style="text-align:left">Costo de capital (10–20%)</td><td style="text-align:left">Tasa social (3–10%)</td></tr>
+        <tr><td style="text-align:left">Beneficiario</td><td style="text-align:left">Identificable</td><td style="text-align:left">Difuso, con efectos redistributivos</td></tr>
+      </tbody>
+    </table>
+    <div class="grid md:grid-cols-3 gap-4 mb-5">
+      <div class="card"><div class="lbl accent-t mb-2">Beneficios B</div><p class="text-xs text-[#999]">Ventajas para el <span class="text-white">público</span>.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Desbeneficios D</div><p class="text-xs text-[#999]">Desventajas para el <span class="text-white">público</span>.</p></div>
+      <div class="card"><div class="lbl accent-v mb-2">Costos C</div><p class="text-xs text-[#999]">Erogaciones del <span class="text-white">patrocinador</span>: construcción, operación, menos salvamento.</p></div>
+    </div>
+    <div class="text-center my-6">$$\text{B/C convencional} = \frac{B-D}{C} \qquad\qquad \text{B/C modificada} = \frac{B-D-C_{O\&M}}{CR}$$</div>
+    <div class="card border-[#fb7185]/40">
+      <div class="lbl accent-r mb-2">El error que cambia la respuesta</div>
+      <p class="text-sm text-[#ccc] leading-relaxed">Colocar D en el <span class="text-white font-semibold">denominador</span>. Conceptualmente confunde «perjuicio al ciudadano» con «gasto del gobierno»: D y C recaen sobre sujetos distintos. Un desbeneficio puede mitigarse o indemnizarse; un costo no.</p>
+    </div>
+  </div>
+</div>
+
+<!--LAB-->
+<div class="slide p-0 m-0">
+  <div class="w-full h-full flex flex-col md:flex-row">
+    <div class="w-full md:w-1/3 lg:w-[26%] p-6 lab-panel flex flex-col gap-4 h-full overflow-y-auto">
+      <div>
+        <div class="badge mb-3">Laboratorio 15</div>
+        <h1 class="text-xl tracking-widest leading-tight mb-2"><span class="font-light text-[#777]">SECTOR PÚBLICO</span><br><span class="font-bold text-white text-2xl">B/C INCREMENTAL</span></h1>
+        <p class="text-[10px] text-[#777] leading-relaxed">Ejercicios 3.6 y 3.7. Otra vez: el mayor cociente individual <span class="accent-r">no</span> es la alternativa correcta.</p>
+      </div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Tasa social i</span><span id="l15-i-val" class="font-mono accent-t">8.0%</span></div>
+          <input type="range" id="l15-i" min="2" max="15" step="0.25" value="8" oninput="lab15()">
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex justify-between items-center lbl"><span>Horizonte n</span><span id="l15-n-val" class="font-mono accent-v">20</span></div>
+          <input type="range" id="l15-n" min="5" max="50" step="1" value="20" oninput="lab15()">
+        </div>
+      </div>
+      <div id="l15-inputs" class="space-y-2 border-t border-[#1f1f1f] pt-4"></div>
+      <div class="space-y-3 border-t border-[#1f1f1f] pt-4">
+        <div><div class="lbl mb-1">Mejor B/C individual</div><div id="l15-gbc" class="font-mono text-base text-[#fb7185]">—</div></div>
+        <div><div class="lbl mb-1">Elegida · incremental</div><div id="l15-ginc" class="font-mono text-lg text-[#2dd4bf]">—</div></div>
+        <div><div class="lbl mb-1">Verificación por B − C máximo</div><div id="l15-gnet" class="font-mono text-base accent-v">—</div></div>
+      </div>
+      <div id="l15-nota" class="border-t border-[#1f1f1f] pt-4 text-[10px] leading-relaxed"></div>
+    </div>
+    <div class="flex-1 h-full p-6 overflow-y-auto">
+      <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Diseños individuales</h3>
+      <table class="dt mb-6" id="l15-t1"></table>
+      <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Análisis incremental · por costo creciente</h3>
+      <table class="dt mb-5" id="l15-t2"></table>
+      <div id="l15-plot" style="height:250px"></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-1">Ejercicios de la sesión</h2>
+    <p class="text-sm text-[#777] mb-6">Siete ejercicios, todos cargados en los laboratorios 11 a 15</p>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="card"><div class="lbl accent-t mb-2">Ej. 3.1 · Lab 11</div><p class="text-sm text-white font-semibold mb-2">TIR y saldo no recuperado</p>
+        <p class="text-xs text-[#999] leading-relaxed">$2,800,000 con $750,000 anuales y salvamento. Interpolar entre 16 y 18%, construir la tabla de saldos y verificar que S₆ = 0.</p></div>
+      <div class="card"><div class="lbl accent-t mb-2">Ej. 3.2 · Lab 11</div><p class="text-sm text-white font-semibold mb-2">TIR múltiple · mina</p>
+        <p class="text-xs text-[#999] leading-relaxed">Flujo con costo de cierre. Aplicar Descartes y Norstrom, hallar las dos raíces, graficar VP(i) y resolver con TIRM.</p></div>
+      <div class="card"><div class="lbl accent-v mb-2">Ej. 3.3 · Lab 12</div><p class="text-sm text-white font-semibold mb-2">TIR incremental</p>
+        <p class="text-xs text-[#999] leading-relaxed">Tres alternativas con ordenamientos opuestos por TIR y por VP. Explicar el conflicto y cuantificar el valor que se perdería.</p></div>
+      <div class="card"><div class="lbl accent-v mb-2">Ej. 3.4 · Lab 13</div><p class="text-sm text-white font-semibold mb-2">Comparación de modelos</p>
+        <p class="text-xs text-[#999] leading-relaxed">LR, SDA y DSD con regla del piso. Evaluar el cambio a línea recta con S = 400,000 y con S = 0, y valuar el escudo fiscal.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Ej. 3.5 · Lab 14</div><p class="text-sm text-white font-semibold mb-2">MACRS y venta anticipada</p>
+        <p class="text-xs text-[#999] leading-relaxed">Recuperación de depreciación, impuesto y flujo neto de la venta. Comparar contra el régimen mexicano.</p></div>
+      <div class="card"><div class="lbl accent-r mb-2">Ej. 3.6 · Lab 15</div><p class="text-sm text-white font-semibold mb-2">B/C convencional y modificada</p>
+        <p class="text-xs text-[#999] leading-relaxed">Sistema de transporte a 25 años. Cuantificar el sesgo de poner D en el denominador y hallar el desbeneficio crítico.</p></div>
+      <div class="card"><div class="lbl accent-a mb-2">Ej. 3.7 · Lab 15</div><p class="text-sm text-white font-semibold mb-2">B/C incremental</p>
+        <p class="text-xs text-[#999] leading-relaxed">Cuatro diseños de planta de tratamiento. Comparar el orden individual contra el incremental y verificar con el beneficio neto.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="slide-content">
+    <h2 class="text-3xl font-bold text-white mb-6">Cierre y referencias</h2>
+    <div class="card border-[#2dd4bf]/40 mb-6">
+      <div class="lbl accent-t mb-3">Lo que debe quedar</div>
+      <ol class="text-sm text-[#ccc] space-y-2 leading-relaxed list-decimal list-inside">
+        <li>La TIR mide rendimiento sobre el <span class="text-white font-semibold">saldo no recuperado</span>, no sobre la inversión.</li>
+        <li>Flujo no convencional ⟹ verificar Descartes y Norstrom antes de reportar una TIR.</li>
+        <li>Alternativas excluyentes ⟹ <span class="text-white font-semibold">siempre</span> análisis incremental, con TIR o con B/C. Nunca el máximo individual.</li>
+        <li>La depreciación entra solo por el ahorro fiscal d<sub>t</sub> × T; acelerarla adelanta el beneficio, no lo aumenta.</li>
+        <li>D va en el numerador. Los desbeneficios son del público, los costos del patrocinador.</li>
+      </ol>
+    </div>
+    <h3 class="text-xs font-bold text-white uppercase tracking-[.15em] mb-3">Referencias</h3>
+    <ul class="text-xs text-[#888] space-y-2 leading-relaxed">
+      <li>Blank, L. y Tarquin, A. (2018). <em>Ingeniería económica</em> (8.ª ed.). McGraw-Hill. Caps. 7–9, 16.</li>
+      <li>Sullivan, W., Wicks, E. y Koelling, C. P. (2019). <em>DeGarmo</em> (17.ª ed.). Pearson. Caps. 5–7, 10.</li>
+      <li>Park, C. S. (2019). <em>Contemporary Engineering Economics</em> (6.ª ed.). Pearson. Caps. 7, 9, 16.</li>
+      <li>Norstrøm, C. J. (1972). A sufficient condition for a unique nonnegative internal rate of return. <em>Journal of Financial and Quantitative Analysis</em>, 7(3), 1835–1839.</li>
+      <li>Hazen, G. B. (2003). A new perspective on multiple internal rates of return. <em>The Engineering Economist</em>, 48(1), 31–51.</li>
+      <li>Ley del Impuesto sobre la Renta (México), arts. 31–38. Porcentajes máximos de deducción de inversiones.</li>
+      <li>Boardman, A., Greenberg, D., Vining, A. y Weimer, D. (2018). <em>Cost-Benefit Analysis: Concepts and Practice</em> (5.ª ed.). Cambridge University Press.</li>
+    </ul>
+  </div>
+</div>
+
+<!--SCRIPT-->
+// ===== LAB 11: TIR, saldos y patologías =====
+let l11cf=[];
+function l11Preset(p){
+  if(p==='e31'){l11cf=[-2800000,750000,750000,750000,750000,750000,1150000];document.getElementById('l11-i').value=15;}
+  else{l11cf=[-5000000,14000000,-9500000];document.getElementById('l11-i').value=15;}
+  l11Render();lab11();
+}
+function l11Row(d){
+  if(d>0&&l11cf.length<21)l11cf.push(0);
+  if(d<0&&l11cf.length>2)l11cf.pop();
+  l11Render();lab11();
+}
+function l11Render(){
+  document.getElementById('l11-tabla').innerHTML=
+    '<thead><tr><th>t</th><th>Flujo</th><th>Saldo inicial</th><th>Interés a la TIR</th><th>Saldo final</th></tr></thead><tbody id="l11-tb"></tbody>';
+  const tb=document.getElementById('l11-tb');
+  tb.innerHTML=l11cf.map((v,t)=>
+    `<tr><td class="accent-t">${t}</td><td><input type="number" value="${v}" step="50000" style="text-align:right" oninput="l11Set(${t},this.value)"></td>
+     <td id="l11-si${t}">—</td><td id="l11-in${t}">—</td><td id="l11-sf${t}">—</td></tr>`).join('');
+}
+function l11Set(t,v){l11cf[t]=+v||0;lab11();}
+function lab11(){
+  const i=+document.getElementById('l11-i').value/100;
+  document.getElementById('l11-i-val').innerText=(i*100).toFixed(1)+'%';
+  const raices=irrAll(l11cf);
+  const vp=npv(i,l11cf);
+  document.getElementById('l11-vp').innerText=money(vp);
+  document.getElementById('l11-vp').style.color=vp>=0?'#2dd4bf':'#fb7185';
+  let signos=0;
+  for(let k=1;k<l11cf.length;k++){
+    const a=l11cf.slice(0,k).reverse().find(x=>x!==0);
+    if(a!==undefined&&l11cf[k]!==0&&Math.sign(a)!==Math.sign(l11cf[k]))signos++;
+  }
+  document.getElementById('l11-desc').innerText=signos+' → hasta '+signos+' raíz'+(signos===1?'':'es');
+  let acc=0,camb=0,prev=0;
+  const accs=l11cf.map((v,k)=>{acc+=v;if(k>0&&Math.sign(acc)!==Math.sign(prev)&&acc!==0&&prev!==0)camb++;prev=acc;return acc;});
+  const norOK=accs[0]<0&&camb===1;
+  document.getElementById('l11-nors').innerText=camb+' cambio'+(camb===1?'':'s')+(norOK?' → única ✓':' → sin garantía');
+  document.getElementById('l11-nors').style.color=norOK?'#2dd4bf':'#fb7185';
+  const n=l11cf.length-1;
+  const vpNeg=l11cf.reduce((s,c,t)=>s+(c<0?c*PF(i,t):0),0);
+  const vfPos=l11cf.reduce((s,c,t)=>s+(c>0?c*FP(i,n-t):0),0);
+  const tirm=(vpNeg<0&&vfPos>0)?Math.pow(vfPos/(-vpNeg),1/n)-1:null;
+  document.getElementById('l11-tirm').innerText=tirm!==null?pct(tirm):'—';
+  const el=document.getElementById('l11-tir'), dg=document.getElementById('l11-diag');
+  if(raices.length===1){
+    el.innerText=pct(raices[0]);el.style.color='#a78bfa';
+    dg.innerHTML=`<span class="accent-t">TIR única.</span> ${raices[0]>i?'Supera la TREMA: <span class="text-white">aceptar</span>':'No alcanza la TREMA: <span class="text-white">rechazar</span>'}, consistente con el signo del VP.<br><br>La tabla de la derecha es <span class="text-white">la definición operativa</span>: a esta tasa el saldo pendiente se agota justo al final. Es la misma mecánica de una tabla de amortización de crédito.`;
+  }else if(raices.length>1){
+    el.innerText=raices.map(r=>pct(r,2)).join('  ·  ');el.style.color='#fb7185';
+    dg.innerHTML=`<span class="accent-r">${raices.length} raíces, ambas matemáticamente válidas.</span><br><br>El proyecto <span class="text-white">alterna entre ser inversión y ser financiamiento</span>: tras cobrar el flujo grande, la empresa tiene dinero que deberá erogar después. En ese tramo no «gana» una tasa, sino que <em>debe</em> una.<br><br>Reporte el <span class="text-white">VP</span> y, si hace falta una tasa comparable, la <span class="accent-a">TIRM</span>. Decir «la TIR es ${pct(raices[raices.length-1],1)}» sería técnicamente cierto y profesionalmente indefendible.`;
+  }else{el.innerText='no existe';el.style.color='#666';dg.innerHTML='<span class="accent-r">Sin raíz real positiva.</span> Use el valor presente.';}
+  const r0=raices.length?raices[0]:i;
+  let s=0;
+  l11cf.forEach((v,t)=>{
+    const si=document.getElementById('l11-si'+t);if(!si)return;
+    if(t===0){si.innerText='—';document.getElementById('l11-in'+t).innerText='—';s=v;}
+    else{const ini=s,int=s*r0;s=s*(1+r0)+v;
+      si.innerText=money0(ini);document.getElementById('l11-in'+t).innerText=money0(int);}
+    const sf=document.getElementById('l11-sf'+t);
+    sf.innerText=money(s);
+    sf.style.color=Math.abs(s)<1?'#2dd4bf':'#999';
+  });
+  const xs=[],ys=[];
+  for(let k=-20;k<=200;k++){const r=k/200;xs.push(r*100);ys.push(npv(r,l11cf));}
+  Plotly.react('l11-plot',[
+    {x:xs,y:ys,name:'VP(i)',type:'scatter',mode:'lines',line:{color:'#a78bfa',width:2.5}},
+    {x:raices.map(r=>r*100),y:raices.map(()=>0),name:'TIR',type:'scatter',mode:'markers',marker:{color:'#fff',size:11}},
+    {x:[i*100],y:[vp],name:'TREMA',type:'scatter',mode:'markers',marker:{color:'#2dd4bf',size:10,symbol:'diamond'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'tasa i (%)',font:{size:10}}},
+     yaxis:{...PL.yaxis,title:{text:'valor presente',font:{size:10}},tickformat:'$,.0s',zeroline:true,zerolinecolor:'#666',zerolinewidth:1.5},
+     margin:{l:60,r:16,t:26,b:40}},PLC);
+}
+
+// ===== LAB 12: análisis incremental =====
+const ALT12=[{k:'A',P:1200000,A:320000,c:'#2dd4bf'},{k:'B',P:2400000,A:590000,c:'#a78bfa'},{k:'C',P:3300000,A:780000,c:'#fb7185'}];
+function lab12(){
+  const i=+document.getElementById('l12-i').value/100, n=+document.getElementById('l12-n').value;
+  document.getElementById('l12-i-val').innerText=(i*100).toFixed(1)+'%';
+  document.getElementById('l12-n-val').innerText=n;
+  document.getElementById('l12-inputs').innerHTML=ALT12.map((a,j)=>
+    `<div><div class="lbl mb-1" style="color:${a.c}">Alternativa ${a.k}</div>
+     <div class="grid grid-cols-2 gap-2">
+       <input type="number" value="${a.P}" step="100000" oninput="ALT12[${j}].P=+this.value;lab12()">
+       <input type="number" value="${a.A}" step="10000" oninput="ALT12[${j}].A=+this.value;lab12()">
+     </div><div class="text-[8px] text-[#555] mt-1 font-mono">inversión · flujo anual</div></div>`).join('');
+  const datos=ALT12.map(a=>{const cf=[-a.P,...Array(n).fill(a.A)];
+    return{...a,tir:irr(cf),vp:npv(i,cf),cf};}).filter(d=>d.tir!==null);
+  document.getElementById('l12-t1').innerHTML=
+    '<thead><tr><th>Alt.</th><th>Inversión</th><th>Flujo anual</th><th>TIR individual</th><th>Orden TIR</th><th>VP a la TREMA</th><th>Orden VP</th></tr></thead><tbody>'+
+    datos.map(d=>{
+      const oT=[...datos].sort((x,y)=>y.tir-x.tir).findIndex(x=>x.k===d.k)+1;
+      const oV=[...datos].sort((x,y)=>y.vp-x.vp).findIndex(x=>x.k===d.k)+1;
+      return `<tr><td style="color:${d.c}">${d.k}</td><td>${money0(d.P)}</td><td>${money0(d.A)}</td>
+        <td>${pct(d.tir)}</td><td class="${oT===1?'accent-r':''}">${oT}.º</td><td>${money0(d.vp)}</td><td class="${oV===1?'accent-t':''}">${oV}.º</td></tr>`;}).join('')+'</tbody>';
+  const ord=[...datos].sort((a,b)=>a.P-b.P);
+  let def=ord[0],filas='';
+  for(let j=1;j<ord.length;j++){
+    const ret=ord[j];
+    const dcf=[-(ret.P-def.P),...Array(n).fill(ret.A-def.A)];
+    const dtir=irr(dcf), dvp=npv(i,dcf), ok=dtir!==null&&dtir>=i;
+    filas+=`<tr class="${ok?'hl':''}"><td>${ret.k} − ${def.k}</td><td>${money0(-(ret.P-def.P))}</td><td>${money0(ret.A-def.A)}</td>
+      <td>${dtir!==null?pct(dtir):'—'}</td><td>${money0(dvp)}</td>
+      <td class="${ok?'accent-t':'accent-r'}">${ok?ret.k+' desplaza a '+def.k:ret.k+' se descarta'}</td></tr>`;
+    if(ok)def=ret;
+  }
+  document.getElementById('l12-t2').innerHTML=
+    '<thead><tr><th>Incremento</th><th>Δ inversión</th><th>Δ flujo anual</th><th>TIR incremental</th><th>VP incremental</th><th>Decisión</th></tr></thead><tbody>'+filas+'</tbody>';
+  const porTIR=[...datos].sort((a,b)=>b.tir-a.tir)[0];
+  const porVP=[...datos].sort((a,b)=>b.vp-a.vp)[0];
+  document.getElementById('l12-gtir').innerText=porTIR.k+'  ('+pct(porTIR.tir,2)+')';
+  document.getElementById('l12-gvp').innerText=def.k+'  ('+money0(def.vp)+')';
+  document.getElementById('l12-perd').innerText=money(def.vp-porTIR.vp);
+  document.getElementById('l12-nota').innerHTML=porTIR.k!==def.k
+    ? `<span class="accent-r">Los dos criterios discrepan.</span> La TIR es un <span class="text-white">porcentaje</span>: mide eficiencia por peso invertido, no cuántos pesos se invierten.<br><br>Elegir ${porTIR.k} implica rechazar ${money0(def.P-porTIR.P)} de inversión adicional que rinde por encima de la TREMA. Ese capital no desaparece: se coloca en la siguiente mejor oportunidad, que por definición rinde exactamente la TREMA.<br><br><span class="text-white">No se puede comprar con porcentajes.</span> Los accionistas cobran dividendos en pesos.`
+    : `<span class="accent-t">Los dos criterios coinciden</span> a esta TREMA. Baje la tasa y verá aparecer el conflicto: a tasas bajas conviene la alternativa intensiva en capital, y la TIR individual sigue prefiriendo la pequeña.`;
+  const xs=[];const ss=datos.map(d=>({x:[],y:[],name:'VP '+d.k,type:'scatter',mode:'lines',line:{color:d.c,width:2.5}}));
+  for(let k=10;k<=500;k+=4){const r=k/2000;
+    datos.forEach((d,j)=>{ss[j].x.push(r*100);ss[j].y.push(npv(r,d.cf));});}
+  Plotly.react('l12-plot',[...ss,
+    {x:[i*100,i*100],y:[Math.min(...ss.flatMap(s=>s.y)),Math.max(...ss.flatMap(s=>s.y))],name:'TREMA',type:'scatter',mode:'lines',line:{color:'#fff',width:1,dash:'dot'}}],
+    {...PL,xaxis:{...PL.xaxis,title:{text:'tasa (%)',font:{size:10}}},
+     yaxis:{...PL.yaxis,title:{text:'valor presente',font:{size:10}},tickformat:'$,.0s',zeroline:true,zerolinecolor:'#555'}},PLC);
+}
+
+// ===== LAB 13: modelos de depreciación =====
+function depLR(B,S,n){return Array(n).fill((B-S)/n);}
+function depSDA(B,S,n){const SU=n*(n+1)/2;return Array.from({length:n},(_,k)=>(n-k)/SU*(B-S));}
+function depDSD(B,S,n){const a=2/n;let bv=B;return Array.from({length:n},()=>{const d=Math.min(a*bv,Math.max(0,bv-S));bv-=d;return d;});}
+function depDSDLR(B,S,n){let bv=B,camb=null;
+  const d=Array.from({length:n},(_,k)=>{const dd=2/n*bv,dl=(bv-S)/(n-k);
+    let x=Math.max(dd,dl);x=Math.min(x,Math.max(0,bv-S));
+    if(dl>dd&&camb===null&&x>0)camb=k+1;bv-=x;return x;});
+  return{d,camb};}
+function lab13(){
+  const B=+document.getElementById('l13-b').value, S=+document.getElementById('l13-s').value,
+        n=+document.getElementById('l13-n').value, T=+document.getElementById('l13-t').value/100,
+        i=+document.getElementById('l13-i').value/100;
+  document.getElementById('l13-s-val').innerText=money0(S);
+  document.getElementById('l13-n-val').innerText=n;
+  document.getElementById('l13-t-val').innerText=(T*100).toFixed(0)+'%';
+  document.getElementById('l13-i-val').innerText=(i*100).toFixed(1)+'%';
+  const Se=Math.min(S,B);
+  const lr=depLR(B,Se,n), sda=depSDA(B,Se,n), dsd=depDSD(B,Se,n), sw=depDSDLR(B,Se,n);
+  const vpEsc=d=>d.reduce((s,x,k)=>s+x*T*PF(i,k+1),0);
+  const vlr=vpEsc(lr), vsda=vpEsc(sda);
+  document.getElementById('l13-vlr').innerText=money(vlr);
+  document.getElementById('l13-vsda').innerText=money(vsda);
+  document.getElementById('l13-vdif').innerText=money(vsda-vlr)+'  ('+(vlr?((vsda/vlr-1)*100).toFixed(1):'0')+'%)';
+  document.getElementById('l13-camb').innerText=sw.camb?('año '+sw.camb):'nunca conviene';
+  document.getElementById('l13-camb').style.color=sw.camb?'#a78bfa':'#666';
+  const bv=d=>{let x=B;return d.map(v=>{x-=v;return x;});};
+  const ts=Array.from({length:n},(_,k)=>k+1);
+  Plotly.react('l13-pd',[
+    {x:ts,y:lr,name:'Línea recta',type:'bar',marker:{color:'#2dd4bf',opacity:.85}},
+    {x:ts,y:sda,name:'Suma de dígitos',type:'bar',marker:{color:'#fb7185',opacity:.85}},
+    {x:ts,y:dsd,name:'DSD con piso',type:'bar',marker:{color:'#a78bfa',opacity:.85}}
+  ],{...PL,barmode:'group',xaxis:{...PL.xaxis,title:{text:'año',font:{size:9}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'cargo anual',font:{size:9}},tickformat:'$,.0s'},
+     title:{text:'Cargo por depreciación',font:{size:11,color:'#999'}},margin:{l:54,r:12,t:44,b:38}},PLC);
+  Plotly.react('l13-pbv',[
+    {x:[0,...ts],y:[B,...bv(lr)],name:'Línea recta',type:'scatter',mode:'lines+markers',line:{color:'#2dd4bf',width:2.5},marker:{size:4}},
+    {x:[0,...ts],y:[B,...bv(sda)],name:'Suma de dígitos',type:'scatter',mode:'lines+markers',line:{color:'#fb7185',width:2.5},marker:{size:4}},
+    {x:[0,...ts],y:[B,...bv(dsd)],name:'DSD con piso',type:'scatter',mode:'lines+markers',line:{color:'#a78bfa',width:2.5},marker:{size:4}},
+    {x:[0,n],y:[Se,Se],name:'Salvamento S',type:'scatter',mode:'lines',line:{color:'#fbbf24',width:1.5,dash:'dot'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'año',font:{size:9}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'valor en libros',font:{size:9}},tickformat:'$,.0s'},
+     title:{text:'Valor en libros',font:{size:11,color:'#999'}},margin:{l:54,r:12,t:44,b:38}},PLC);
+  const blr=bv(lr),bsda=bv(sda),bdsd=bv(dsd);
+  document.getElementById('l13-tabla').innerHTML=
+    '<thead><tr><th>Año</th><th>d LR</th><th>BV LR</th><th>d SDA</th><th>BV SDA</th><th>d DSD</th><th>BV DSD</th><th>d DSD→LR</th><th>Ahorro SDA</th></tr></thead><tbody>'+
+    ts.map((t,k)=>`<tr${sw.camb===t?' class="hl"':''}><td class="accent-t">${t}</td>
+      <td>${money0(lr[k])}</td><td>${money0(blr[k])}</td>
+      <td>${money0(sda[k])}</td><td>${money0(bsda[k])}</td>
+      <td>${money0(dsd[k])}</td><td>${money0(bdsd[k])}</td>
+      <td>${money0(sw.d[k])}</td><td class="accent-a">${money0(sda[k]*T)}</td></tr>`).join('')+
+    `<tr style="border-top:2px solid #2a2a2a"><td class="text-white">Σ</td>
+      <td class="text-white">${money0(lr.reduce((a,b)=>a+b,0))}</td><td></td>
+      <td class="text-white">${money0(sda.reduce((a,b)=>a+b,0))}</td><td></td>
+      <td class="text-white">${money0(dsd.reduce((a,b)=>a+b,0))}</td><td></td>
+      <td class="text-white">${money0(sw.d.reduce((a,b)=>a+b,0))}</td>
+      <td class="text-white">${money0(sda.reduce((a,b)=>a+b,0)*T)}</td></tr></tbody>`;
+}
+
+// ===== LAB 14: MACRS vs LISR en venta anticipada =====
+const MACRS5=[.20,.32,.192,.1152,.1152,.0576];
+function lab14(){
+  const B=+document.getElementById('l14-b').value, ty=+document.getElementById('l14-ty').value,
+        PV=+document.getElementById('l14-pv').value, T=+document.getElementById('l14-t').value/100,
+        lr=+document.getElementById('l14-lr').value/100;
+  document.getElementById('l14-ty-val').innerText=ty;
+  document.getElementById('l14-pv-val').innerText=money0(PV);
+  document.getElementById('l14-t-val').innerText=(T*100).toFixed(0)+'%';
+  document.getElementById('l14-lr-val').innerText=(lr*100).toFixed(0)+'%';
+  const dm=MACRS5.map(r=>B*r); let bm=B; const bvm=dm.map(d=>{bm-=d;return bm;});
+  const dl=Array(6).fill(B*lr); let bl=B; const bvl=dl.map(d=>{bl=Math.max(0,bl-d);return bl;});
+  const BVm=bvm[ty-1], BVl=bvl[ty-1];
+  const resM=PV-BVm, resL=PV-BVl;
+  const impM=resM*T, impL=resL*T;
+  const netM=PV-impM, netL=PV-impL;
+  document.getElementById('l14-t1').innerHTML=
+    '<thead><tr><th>t</th><th>rₜ</th><th>dₜ</th><th>BVₜ</th></tr></thead><tbody>'+
+    MACRS5.map((r,k)=>`<tr${k===ty-1?' class="hl"':''}><td>${k+1}</td><td>${(r*100).toFixed(2)}%</td><td>${money0(dm[k])}</td><td>${money0(bvm[k])}</td></tr>`).join('')+'</tbody>';
+  document.getElementById('l14-t2').innerHTML=
+    '<thead><tr><th>t</th><th>tasa</th><th>dₜ</th><th>BVₜ</th></tr></thead><tbody>'+
+    dl.map((d,k)=>`<tr${k===ty-1?' class="hl"':''}><td>${k+1}</td><td>${(lr*100).toFixed(0)}%</td><td>${money0(d)}</td><td>${money0(bvl[k])}</td></tr>`).join('')+'</tbody>';
+  const et=(r)=>r>0?'recuperación de depreciación':r<0?'pérdida deducible':'sin efecto';
+  document.getElementById('l14-res').innerHTML=`
+    <div><div class="lbl accent-t mb-1">MACRS · valor en libros t${ty}</div><div class="font-mono text-base text-white">${money(BVm)}</div>
+      <div class="text-[10px] mt-1" style="color:${resM>0?'#fb7185':'#2dd4bf'}">${et(resM)}: ${money(Math.abs(resM))}</div>
+      <div class="text-[10px] text-[#888]">${resM>0?'impuesto':'ahorro'}: ${money(Math.abs(impM))}</div>
+      <div class="font-mono text-sm accent-t mt-1">flujo neto ${money(netM)}</div></div>
+    <div><div class="lbl accent-r mb-1">LISR · valor en libros t${ty}</div><div class="font-mono text-base text-white">${money(BVl)}</div>
+      <div class="text-[10px] mt-1" style="color:${resL>0?'#fb7185':'#2dd4bf'}">${et(resL)}: ${money(Math.abs(resL))}</div>
+      <div class="text-[10px] text-[#888]">${resL>0?'impuesto':'ahorro'}: ${money(Math.abs(impL))}</div>
+      <div class="font-mono text-sm accent-r mt-1">flujo neto ${money(netL)}</div></div>
+    <div class="card !p-3 !bg-[#0d1512]"><div class="lbl mb-1">Diferencia en el flujo</div>
+      <div class="font-mono text-lg text-white">${money(Math.abs(netM-netL))}</div></div>`;
+  Plotly.react('l14-plot',[
+    {x:[0,1,2,3,4,5,6],y:[B,...bvm],name:'Valor en libros MACRS',type:'scatter',mode:'lines+markers',line:{color:'#2dd4bf',width:2.5},marker:{size:5}},
+    {x:[0,1,2,3,4,5,6],y:[B,...bvl],name:'Valor en libros LISR',type:'scatter',mode:'lines+markers',line:{color:'#fb7185',width:2.5},marker:{size:5}},
+    {x:[ty],y:[PV],name:'Precio de venta',type:'scatter',mode:'markers',marker:{color:'#fbbf24',size:13,symbol:'diamond'}}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'año',font:{size:10}},dtick:1},
+     yaxis:{...PL.yaxis,title:{text:'pesos',font:{size:10}},tickformat:'$,.0s'}},PLC);
+  document.getElementById('l14-comp').innerHTML=
+    `<div class="lbl accent-v mb-2">Lectura</div>
+     <p class="text-sm text-[#ccc] leading-relaxed">${resM>0&&resL<0
+       ?'<span class="text-white font-semibold">Bajo MACRS hay ganancia gravable; bajo LISR hay pérdida deducible.</span> El mismo activo, el mismo precio y la misma tasa de ISR, con un resultado fiscal de signo opuesto.'
+       :'Ambos regímenes dan el mismo signo en este punto. Mueva el precio de venta o el año y verá aparecer la divergencia.'}</p>
+     <p class="text-xs text-[#888] leading-relaxed mt-3">MACRS deprecia agresivamente, así que el valor en libros cae muy por debajo del de mercado. La LISR deprecia lento y lo deja por encima. <span class="text-white">El flujo después de impuestos no es una propiedad del activo, sino del régimen fiscal.</span></p>
+     <p class="text-xs text-[#888] leading-relaxed mt-3"><span class="accent-r">Error costoso:</span> registrar ${money0(PV)} como flujo de la venta en lugar de ${money0(netM)} sobreestima el ingreso en ${resM>0?((PV/netM-1)*100).toFixed(1):'0'}%. Este cálculo es exactamente el flujo de la venta del defensor en el análisis de reemplazo de la Sesión 4.</p>
+     <p class="text-[10px] text-[#666] leading-relaxed mt-3">Nota: se toma el año completo de MACRS en el año de disposición; la regla estricta aplica media convención también ahí. El cálculo LISR omite la actualización por INPC del art. 31.</p>`;
+}
+
+// ===== LAB 15: B/C incremental =====
+const P15=[{k:'P1',I:8000000,M:700000,B:2200000,c:'#2dd4bf'},{k:'P2',I:11000000,M:900000,B:2850000,c:'#a78bfa'},
+           {k:'P3',I:14500000,M:1050000,B:3500000,c:'#fb7185'},{k:'P4',I:19000000,M:1400000,B:4200000,c:'#fbbf24'}];
+function lab15(){
+  const i=+document.getElementById('l15-i').value/100, n=+document.getElementById('l15-n').value;
+  document.getElementById('l15-i-val').innerText=(i*100).toFixed(1)+'%';
+  document.getElementById('l15-n-val').innerText=n;
+  document.getElementById('l15-inputs').innerHTML=P15.map((p,j)=>
+    `<div><div class="lbl mb-1" style="color:${p.c}">${p.k}</div>
+     <div class="grid grid-cols-3 gap-1">
+       <input type="number" value="${p.I}" step="500000" oninput="P15[${j}].I=+this.value;lab15()">
+       <input type="number" value="${p.M}" step="50000" oninput="P15[${j}].M=+this.value;lab15()">
+       <input type="number" value="${p.B}" step="50000" oninput="P15[${j}].B=+this.value;lab15()">
+     </div><div class="text-[8px] text-[#555] mt-1 font-mono">inversión · O&amp;M · beneficios</div></div>`).join('');
+  const d=P15.map(p=>{const C=p.I*AP(i,n)+p.M;return{...p,C,bc:p.B/C,neto:p.B-C};});
+  document.getElementById('l15-t1').innerHTML=
+    '<thead><tr><th>Diseño</th><th>Inversión</th><th>CR anual</th><th>O&amp;M</th><th>Costo anual C</th><th>Beneficios B</th><th>B/C</th><th>B − C</th></tr></thead><tbody>'+
+    d.map(x=>`<tr><td style="color:${x.c}">${x.k}</td><td>${money0(x.I)}</td><td>${money0(x.I*AP(i,n))}</td><td>${money0(x.M)}</td>
+      <td>${money0(x.C)}</td><td>${money0(x.B)}</td><td class="${x.bc===Math.max(...d.map(y=>y.bc))?'accent-r':''}">${x.bc.toFixed(4)}</td>
+      <td class="${x.neto===Math.max(...d.map(y=>y.neto))?'accent-t':''}">${money0(x.neto)}</td></tr>`).join('')+'</tbody>';
+  const ord=[...d].sort((a,b)=>a.C-b.C);
+  let def=ord[0],filas='';
+  for(let j=1;j<ord.length;j++){
+    const r=ord[j], dB=r.B-def.B, dC=r.C-def.C, ratio=dC!==0?dB/dC:Infinity, ok=ratio>=1;
+    filas+=`<tr class="${ok?'hl':''}"><td>${r.k} − ${def.k}</td><td>${money0(dB)}</td><td>${money0(dC)}</td>
+      <td>${isFinite(ratio)?ratio.toFixed(4):'—'}</td>
+      <td class="${ok?'accent-t':'accent-r'}">${ok?r.k+' desplaza a '+def.k:r.k+' se descarta'}</td></tr>`;
+    if(ok)def=r;
+  }
+  document.getElementById('l15-t2').innerHTML=
+    '<thead><tr><th>Incremento</th><th>Δ B</th><th>Δ C</th><th>Δ B / Δ C</th><th>Decisión</th></tr></thead><tbody>'+filas+'</tbody>';
+  const mejorBC=[...d].sort((a,b)=>b.bc-a.bc)[0], mejorNeto=[...d].sort((a,b)=>b.neto-a.neto)[0];
+  document.getElementById('l15-gbc').innerText=mejorBC.k+'  ('+mejorBC.bc.toFixed(4)+')';
+  document.getElementById('l15-ginc').innerText=def.k;
+  document.getElementById('l15-ginc').style.color=def.c;
+  document.getElementById('l15-gnet').innerText=mejorNeto.k+'  ('+money0(mejorNeto.neto)+')';
+  document.getElementById('l15-nota').innerHTML=mejorBC.k!==def.k
+    ? `<span class="accent-r">Discrepancia.</span> La B/C individual favorece a ${mejorBC.k}; el incremental selecciona <span class="text-white">${def.k}</span>, que además maximiza B − C.<br><br>Elegir ${mejorBC.k} por su cociente implica renunciar a incrementos que rinden <span class="text-white">más de un peso de beneficio por peso de costo</span>.<br><br>Es el mismo fenómeno del Laboratorio 12, con B/C en lugar de TIR: <span class="text-white">los cocientes no ordenan alternativas excluyentes</span>.`
+    : `<span class="accent-t">Coinciden</span> a esta tasa. Mueva la tasa social o los beneficios para hacer aparecer el conflicto.`;
+  Plotly.react('l15-plot',[
+    {x:d.map(x=>x.k),y:d.map(x=>x.bc),name:'B/C individual',type:'bar',marker:{color:'#fb7185',opacity:.8}},
+    {x:d.map(x=>x.k),y:d.map(()=>1),name:'umbral 1.0',type:'scatter',mode:'lines',line:{color:'#666',width:1.5,dash:'dot'}},
+    {x:d.map(x=>x.k),y:d.map(x=>x.neto),name:'Beneficio neto B − C',type:'scatter',mode:'lines+markers',
+     line:{color:'#2dd4bf',width:3},marker:{size:9},yaxis:'y2'}
+  ],{...PL,xaxis:{...PL.xaxis,title:{text:'',font:{size:10}}},
+     yaxis:{...PL.yaxis,title:{text:'B/C',font:{size:9}}},
+     yaxis2:{...PL.yaxis,title:{text:'B − C anual',font:{size:9}},overlaying:'y',side:'right',tickformat:'$,.0s'},
+     margin:{l:48,r:56,t:28,b:34}},PLC);
+}
+
+// ===== init =====
+function onSlideChange(k){
+  const m={3:['l11-plot'],6:['l12-plot'],8:['l13-pd','l13-pbv'],10:['l14-plot'],12:['l15-plot']};
+  if(m[k])setTimeout(()=>m[k].forEach(id=>{try{Plotly.Plots.resize(id);}catch(e){}}),120);
+}
+window.addEventListener('load',()=>{initNav();l11Preset('e31');lab12();lab13();lab14();lab15();});
